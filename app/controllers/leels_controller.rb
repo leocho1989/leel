@@ -1,0 +1,2 @@
+class LeelsController < ApplicationController
+end
