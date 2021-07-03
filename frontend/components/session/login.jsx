@@ -32,6 +32,7 @@ render() {
             <label>Password:
                 <input type="password" value={this.state.password} onChange={this.handleInput('password')} />
             </label>
+            <button onClick={this.handleSubmit}>Log in</button>
         </form>
 
     </div>
