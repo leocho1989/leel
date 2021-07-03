@@ -38,7 +38,7 @@ class Api::UsersController < ApplicationController
             @user.destroy
             render 'api/users/show'
         else
-            render json: ['Invalid username'],
+            render json: ['Invalid username']
         end
     end
 
