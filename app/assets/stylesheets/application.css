@@ -19,12 +19,13 @@
   color: white;
   font-family: Georgia, 'Times New Roman', Times, serif;
     text-decoration: none;
-     background: asset-url('background.jpeg') no-repeat center center fixed; 
+    background: url('background.jpeg') no-repeat center center fixed; 
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
 }
+  
 
  .nav-bar {
     color: white;
