@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Leel</title>
+    <title>leel</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -17,6 +17,15 @@
     };
     </script>
     <%end%>
+    <style>
+        body {
+            background: url(<%= asset_path 'background.jpeg' %>) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+            }
+    </style>     
   </head>
 
   <body>
