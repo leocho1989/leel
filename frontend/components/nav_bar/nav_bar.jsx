@@ -1,16 +1,21 @@
 import React from 'react';
-import {Link} from 'react-router-dom';
+import {Link, useLocation} from 'react-router-dom';
 
-export default ({currentUser, logout}) =>{
+export default ({currentUser, logout, ...props}) =>{
+
+    console.log(props);
+    let location = useLocation();
+
+
     const display = currentUser ? (
         <div>
             <p>{currentUser.username}</p>
-            <button onClick={logout}>Logout!</button>
+            <button onClick={logout}>Log out</button>
         </div>
     ):(
         <div>
-            <Link className="button" id="signup" to="/signup">Sign Up</Link>
-            <Link className="button" id="login" to="/login">Log in</Link>
+            {(location.pathname === '/login' || location.pathname === '/') && <Link className="button" id="signup" to="/signup">Sign Up</Link>}
+            {(location.pathname === '/signup' || location.pathname === '/') &&<Link className="button" id="login" to="/login">Log in</Link>}
         </div>
     );
  

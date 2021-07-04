@@ -32,16 +32,20 @@
    display: flex;
    justify-content: space-between;
    padding: 0px 5px 0px 10px;
-   background: #001935;
+   /* background: #001935; */
    align-items: center;
    height: 38px;
    width: 100%;
    top: 0px;
    position: fixed;
    left: 0px;
-
- 
  }
+
+
+ .nav-bar p {
+   color:black;
+  }
+
 
     .button {
      background-color: #001935;

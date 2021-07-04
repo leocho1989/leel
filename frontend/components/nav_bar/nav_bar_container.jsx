@@ -4,7 +4,8 @@ import NavBar from './nav_bar';
 import {logout} from '../../actions/session';
 
 const mSTP = state => ({
-    currentUser:state.session.currentUser
+    currentUser:state.session.currentUser,
+    session:state.session,
 });
 
 const mDTP = dispatch => ({

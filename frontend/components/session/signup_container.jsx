@@ -5,5 +5,5 @@ import Signup from './signup';
 const mDTP = dispatch=>({
     createNewUser: formUser=>dispatch(createNewUser(formUser))
 });
-
-export default connect(null, mDTP)(Signup);
+const mapStateToProps = (state) => ({ missing: state.session.missing })
+export default connect(mapStateToProps, mDTP)(Signup);
