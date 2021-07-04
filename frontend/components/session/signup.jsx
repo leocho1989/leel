@@ -23,8 +23,8 @@ render() {
     return (
         <div>
 
-            <form action="">
-<h2>Sign Up!</h2>
+            <form className='signup-form'>
+<h2>Sign Up</h2>
             
             <label>Username:
             <input type="text" value={this.state.username} onChange={this.handleInput('username')} /></label>
@@ -36,8 +36,9 @@ render() {
             <label>Password:
                 <input type="password" value={this.state.password} onChange={this.handleInput('password')}/>
             </label>
-            <button onClick={this.handleSubmit}>Sign Up!</button>
+            <button id="signup-btn" onClick={this.handleSubmit}>Sign Up</button>
             </form>
+            
         </div>
 
 
