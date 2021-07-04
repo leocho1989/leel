@@ -13,6 +13,8 @@ export default ({currentUser, logout}) =>{
             <Link className="button" id="login" to="/login">Log in</Link>
         </div>
     );
+ 
+
     return (
         <header className="nav-bar">
             <Link className="logo" to="/">leel</Link>

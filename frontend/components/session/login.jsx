@@ -23,16 +23,18 @@ handleSubmit(e) {
 }
 render() {
     return (
-    <div className="session-form">
-        <p>Log In</p>
+    <div className="form">
+        <h2>Log In</h2>
         <form>
-            <label>Username:
-                <input type="text" value={this.state.username} onChange={this.handleInput('username')} />
+            <label>
+                <input type="text" placeholder="username" value={this.state.username} onChange={this.handleInput('username')} />
             </label>
-            <label>Password:
-                <input type="password" value={this.state.password} onChange={this.handleInput('password')} />
+            <br></br>
+            <label>
+                <input type="password" placeholder="password" value={this.state.password} onChange={this.handleInput('password')} />
             </label>
-            <button onClick={this.handleSubmit}>Log in</button>
+            <br></br>
+            <button id="btn" onClick={this.handleSubmit}>Log in</button>
         </form>
 
     </div>

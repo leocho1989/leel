@@ -21,26 +21,29 @@ class Signup extends React.Component {
     }
 render() {
     return (
+        
         <div>
 
-            <form className='signup-form'>
+            <form className='form'>
 <h2>leel</h2>
             
-            <label>
-            <input type="text" placeholder="username" value={this.state.username} onChange={this.handleInput('username')} /></label>
-
             <label >
+                
+            <input type="text" placeholder="username" value={this.state.username} onChange={this.handleInput('username')} /></label>
+            <br></br>
+
+            <label>
                 <input type="text" placeholder="email" value={this.state.email} onChange={this.handleInput('email')} />
             </label>
-
-            <label>
+        <br></br>
+            <label >
                 <input type="password" placeholder="password" value={this.state.password} onChange={this.handleInput('password')}/>
             </label>
-            <button id="signup-btn" onClick={this.handleSubmit}>Sign Up</button>
+            <br></br>
+            <button id="btn" onClick={this.handleSubmit}>Sign Up</button>
             </form>
             
         </div>
-
 
     )}
 }
