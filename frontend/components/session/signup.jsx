@@ -24,17 +24,17 @@ render() {
         <div>
 
             <form className='signup-form'>
-<h2>Sign Up</h2>
+<h2>leel</h2>
             
-            <label>Username:
-            <input type="text" value={this.state.username} onChange={this.handleInput('username')} /></label>
+            <label>
+            <input type="text" placeholder="username" value={this.state.username} onChange={this.handleInput('username')} /></label>
 
-            <label >E-mail:
-                <input type="text" value={this.state.email} onChange={this.handleInput('email')} />
+            <label >
+                <input type="text" placeholder="email" value={this.state.email} onChange={this.handleInput('email')} />
             </label>
 
-            <label>Password:
-                <input type="password" value={this.state.password} onChange={this.handleInput('password')}/>
+            <label>
+                <input type="password" placeholder="password" value={this.state.password} onChange={this.handleInput('password')}/>
             </label>
             <button id="signup-btn" onClick={this.handleSubmit}>Sign Up</button>
             </form>

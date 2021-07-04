@@ -19,7 +19,7 @@
   color: white;
   font-family: Georgia, 'Times New Roman', Times, serif;
     text-decoration: none;
-    background: url('background.jpeg') no-repeat center center fixed; 
+      background: url('../images/background.jpeg') no-repeat center center fixed; 
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -69,13 +69,6 @@
          font: 16px Favorit, "Helvetica Neue", Helvetica, Arial, sans-serif;
         }
 
-         #signup-btn {
-         color:#000000;
-         background-color: #00b8ff;
-         margin: 0px 10px 0px 0px;
-         padding: 6px 15px;
-         font: 16px Favorit, "Helvetica Neue", Helvetica, Arial, sans-serif;
-        }
 
         .logo {
             color:#FFFFFF;
@@ -84,7 +77,4 @@
             text-decoration: none;
             font-weight: bold;
              }
-
-
-
 
