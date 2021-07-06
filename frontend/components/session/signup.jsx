@@ -10,21 +10,12 @@ class Signup extends React.Component {
         };
         this.handleSubmit= this.handleSubmit.bind(this);
          }
-
-        //  componentDidMount(props) {
-             
-        //      console.log(this.props);
-        //  }
-
          componentDidUpdate(pProps) {
              if(this.props.missing !== pProps.missing) {
                  this.setState({
                      errorMessages: this.props.missing,
-                })
-                alert(2)
+                });
              }
-                
-             console.log(this.props);
          }
 
     handleInput(type) {
@@ -43,7 +34,7 @@ render() {
 
             <form className='form'>
 <h2>leel</h2>
-            {this.state.errorMessages.map((eachError, i) => <div key={i}>{eachError}</div>)}
+            {this.state.errorMessages.map((eachError, i) => <div key={i}><li>*{eachError}</li></div>)}
             <label >
                 
             <input type="text" placeholder="username" value={this.state.username} onChange={this.handleInput('username')} /></label>

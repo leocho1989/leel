@@ -8,13 +8,11 @@ export default (state=_nullSession, action) =>{
     Object.freeze(state);
     switch(action.type) {
         case SIGNUP_ERROR:
-            alert(3)
             return {
                 missing: action.user.responseJSON
-            }
+            };
    
         case RECEIVE_CURRENT_USER:
-            alert(123);
         const currentUser = action.user;
         return Object.assign({},{currentUser});
         case LOGOUT_CURRENT_USER:

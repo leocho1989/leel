@@ -1,6 +1,16 @@
 import React from 'react';
 
 class Login extends React.Component {
+
+     componentDidUpdate(pProps) {
+             if(this.props.missing !== pProps.missing) {
+                 this.setState({
+                     errorMessages: this.props.missing,
+                });
+             }
+         }
+
+
 constructor(props) {
 super(props);
 this.state = {
@@ -26,6 +36,7 @@ render() {
     <div className="form">
         <h2>Log In</h2>
         <form>
+             {this.state.errorMessages.map((eachError, i) => <div key={i}><li>*{eachError}</li></div>)}
             <label>
                 <input type="text" placeholder="username" value={this.state.username} onChange={this.handleInput('username')} />
             </label>

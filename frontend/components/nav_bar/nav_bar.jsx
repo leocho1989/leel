@@ -3,7 +3,6 @@ import {Link, useLocation} from 'react-router-dom';
 
 export default ({currentUser, logout, ...props}) =>{
 
-    console.log(props);
     let location = useLocation();
 
 
