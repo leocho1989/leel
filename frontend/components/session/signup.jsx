@@ -33,7 +33,7 @@ render() {
 
             <form className='form'>
 <h2>leel</h2>
-{this.state.errorMessages.map((error, i) => <div key={i}><li>*{error}</li></div>)}
+{this.state.errorMessages.map((error, i) => <div key={i}><p>*{error}</p></div>)}
             <label >
                 
             <input type="text" placeholder="username" value={this.state.username} onChange={this.handleInput('username')} /></label>

@@ -38,13 +38,19 @@ body {
 
 
  #hgetstarted {
-     margin-top: 10px;
+        margin-top: 15px;  
+              display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        padding: 7px;
          color:#000000;
          background-color: #00b8ff;
-         padding: 6px 15px;
-         font: 16px Favorit, "Helvetica Neue", Helvetica, Arial, sans-serif;
+         font: 12px Favorit, "Helvetica Neue", Helvetica, Arial, sans-serif;
          border-radius: 3px;
-         width: 30px;
+         width: 100%;
          border: none;
          text-decoration: none;
 
@@ -52,26 +58,39 @@ body {
         }
 
          #hlogin {
-     margin-top: 10px;
+             margin-top: 7px; 
+     display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        padding: 7px;
          color:#000000;
          background-color: #ffffff;
-         padding: 6px 15px;
-         font: 16px Favorit, "Helvetica Neue", Helvetica, Arial, sans-serif;
+         font: 12px Favorit, "Helvetica Neue", Helvetica, Arial, sans-serif;
          border-radius: 3px;
-         width: 30px;
+         width: 100%;
          border: none;
          text-decoration: none;
+
 
         }
 
          #hdemo {
-     margin-top: 150px;
+             margin-top: 7px; 
+    display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        padding: 7px;
          color:#000000;
-         background-color: indianred;
-         padding: 6px 15px;
-         font: 16px Favorit, "Helvetica Neue", Helvetica, Arial, sans-serif;
+         background-color:rgb(245, 156, 23);
+         font: 12px Favorit, "Helvetica Neue", Helvetica, Arial, sans-serif;
          border-radius: 3px;
-         width: 30px;
+         width: 100%;
          border: none;
          text-decoration: none;
 
