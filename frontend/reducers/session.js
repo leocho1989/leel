@@ -1,4 +1,4 @@
-import {RECEIVE_CURRENT_USER, LOGOUT_CURRENT_USER, SIGNUP_ERROR} from '../actions/session';
+import {RECEIVE_CURRENT_USER, LOGOUT_CURRENT_USER} from '../actions/session';
 
 const _nullSession = {
     currentUser: null
@@ -7,11 +7,6 @@ const _nullSession = {
 export default (state=_nullSession, action) =>{
     Object.freeze(state);
     switch(action.type) {
-        case SIGNUP_ERROR:
-            return {
-                missing: action.user.responseJSON
-            };
-   
         case RECEIVE_CURRENT_USER:
         const currentUser = action.user;
         return Object.assign({},{currentUser});

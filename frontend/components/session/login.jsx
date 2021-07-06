@@ -2,20 +2,18 @@ import React from 'react';
 
 class Login extends React.Component {
 
-     componentDidUpdate(pProps) {
-             if(this.props.missing !== pProps.missing) {
-                 this.setState({
-                     errorMessages: this.props.missing,
-                });
-             }
-         }
+    componentDidUpdate(PreProps){
+     if (this.props.errors!== PreProps.errors) {
+         this.setState({ errorMessages: this.props.errors});}
 
+    }
 
 constructor(props) {
 super(props);
 this.state = {
     username: '',
-    password: ''};
+    password: '',
+errorMessages:[]};
 
     this.handleSubmit = this.handleSubmit.bind(this);
 }
@@ -36,7 +34,8 @@ render() {
     <div className="form">
         <h2>Log In</h2>
         <form>
-             {this.state.errorMessages.map((eachError, i) => <div key={i}><li>*{eachError}</li></div>)}
+         
+             {this.state.errorMessages.map((error, i) => <div key={i}><li>*{error}</li></div>)}
             <label>
                 <input type="text" placeholder="username" value={this.state.username} onChange={this.handleInput('username')} />
             </label>
