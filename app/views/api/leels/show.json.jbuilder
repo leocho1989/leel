@@ -1,1 +1,0 @@
-json.partial! 'api/leels/leel', leel: @leel

@@ -10,6 +10,7 @@ export default ({ leel, likeLeel, unLikeLeel}) =>{
 
     return (
         <li>
+            <p>Authour:{leel.author_username}</p>
             <h3>{leel.body}</h3>
             <p><strong>Likes:{leel.likes}</strong></p>
             <button onClick={likeButtonAction}>{likeButtonText}</button>

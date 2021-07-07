@@ -1,0 +1,1 @@
+json.partial! 'api/leel_posts/leel', leel: @leel

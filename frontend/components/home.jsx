@@ -1,8 +1,16 @@
 import React from 'react';
-import {Link} from 'react-router-dom';
+import {useSelector} from 'react-redux';
+import {Link, Redirect} from 'react-router-dom';
+
 
 export default ()=> {
-    
+    const currentUser = useSelector((state) => state.session.currentUser);
+
+
+    if (currentUser)
+    {
+        return (<Redirect to="/leel_posts" />);
+    }
         return(
             <div className="home">
                 <h1>leel</h1>

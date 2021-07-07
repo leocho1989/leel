@@ -1,6 +1,8 @@
 import React from 'react';
+import {Redirect} from 'react-router-dom';
 
 class Login extends React.Component {
+
 
     componentDidUpdate(PreProps){
      if (this.props.errors!== PreProps.errors) {
@@ -30,6 +32,10 @@ handleSubmit(e) {
     .then(() => this.props.history.push('/leel_posts'));
 }
 render() {
+     if (this.props.currentUser)
+    {
+        return (<Redirect to="/leel_posts" />);
+    }
     return (
     <div className="form">
         <h2>Log In</h2>

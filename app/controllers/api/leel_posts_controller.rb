@@ -24,7 +24,20 @@ class Api::LeelPostsController < ApplicationController
     end
 
     def index
-        @leel =LeelPost.all
+        # @leel =LeelPost.all
+        @leels = if params[:user_id]
+            LeelPost.where(author_id: params[:user_id])
+        else
+            LeelPost.all
+        end
+
+        # render json: @leels
+
+        if @leels
+            render :show
+        else
+            render json: @leel.errors.full_messages, status:404
+        end
     end
 
     def destroy
