@@ -56,16 +56,6 @@ body {
   left: 0px;
   overflow: hidden;
 
-
-
-  grid-area: header;
-    // background-color: darkgray;
-    color: white;
-    display: flex;
-    justify-content: space-between;
-    padding: 0px 5px 0px 10px;
-    align-items: center;
-   
 }
 
 .nav-bar p {
@@ -73,9 +63,22 @@ body {
 }
 
 .button {
-  background-color: #001935;
-  padding: 10px;
-  text-decoration: none;
+  color: #000000;
+  background-color: #bdf760;
+  margin: 0px 10px 0px 0px;
+  padding: 5px 13px;
+  font: 13px Favorit, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  border: none;
+  border-radius: 3px;
+}
+
+.like_button {
+  color: #fdfcfc;
+  background-color: #6d6d6b;
+  margin: 0px 10px 0px 0px;
+  padding: 3px 10px;
+  font: 10px Favorit, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  border: none;
   border-radius: 3px;
 }
 
@@ -85,6 +88,7 @@ body {
   margin: 0px 10px 0px 0px;
   padding: 6px 15px;
   font: 16px Favorit, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  text-decoration: none;
 }
 
 #login {
@@ -93,6 +97,7 @@ body {
   margin: 0px 10px 0px 0px;
   padding: 6px 15px;
   font: 16px Favorit, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  text-decoration: none;
 }
 
 .logo {

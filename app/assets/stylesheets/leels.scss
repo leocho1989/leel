@@ -11,17 +11,50 @@
 }
 
 .leels {
-  grid-area: content;
-  overflow: auto;
-
-  overflow: hidden;
-  opacity: 0;
-  transform: translate3d(0, 500px, 0);
-  animation: arrive 500ms ease-in-out 0.9s forwards;
-  text-align: center;
-  width: 550px;
+    grid-area: content;
+    opacity: 0;
+    transform: translate3d(0, 500px, 0);
+    animation: arrive 500ms ease-in-out 0.9s forwards;
+    width: 550px;
     margin-left: auto;
     margin-right: auto;
+    overflow:auto;
+     -ms-overflow-style: none; 
+  scrollbar-width: none;
+}
+
+.post {
+    background-color: white;
+     padding-top: 3vh;
+    padding-bottom: 1.7vh;
+    margin-top: 2vh;
+    z-index: 0;
+    width: 65vh;
+    border-radius: 3px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    padding-left: 2vh;
+    padding-right: 2vh;
+    text-align: left;
+    word-wrap: break-word;
+    position: relative;
+     -ms-overflow-style: none; 
+  scrollbar-width: none;
+  border-top-right-radius: 15px;
+  border-bottom-right-radius: 15px;
+}
+
+.post::-webkit-scrollbar {
+  display: none;
+}
+
+.leels::-webkit-scrollbar {
+  display: none;
+}
+
+.body_post {
+    color:rgb(85, 84, 84);
+    font-size: 12pt;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
 .author {

@@ -25,7 +25,7 @@ export default ()=> {
         return(
             <div className="home">
                 <h1>leel</h1>
-                <p>A place for you to share things!</p>
+                <h3>A place for you to share things!</h3>
 <Link className="hbtn" id="hgetstarted" to="/signup">Get Started</Link>    
 
 <Link className="hbtn" id="hlogin" to="/login">Log In</Link>

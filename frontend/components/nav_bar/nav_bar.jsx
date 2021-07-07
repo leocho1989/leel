@@ -8,9 +8,9 @@ export default ({currentUser, logout, ...props}) =>{
 
     const display = currentUser ? (
         <div>
-            <p>{currentUser.username}</p>
-            <button onClick={logout}>Log out</button>
-        </div>
+            <p>*{currentUser.username}</p>
+            <button className="button" id="logout" onClick={logout}>Log out</button>
+        </div> 
     ):(
         <div>
             {(location.pathname === '/login' || location.pathname === '/' || location.pathname === '/leel_posts') && <Link className="button" id="signup" to="/signup">Sign Up</Link>}
