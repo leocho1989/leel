@@ -8,7 +8,7 @@ import {AuthRoute, ProtectedRoute} from '../util/route_util' ;
 import Home from './home';
 
 export default ()=> (
-    <div>
+    <div className="page">
         <Route path="/" component={NavBarContainer} />
         <Route exact path="/" component={Home} />
         <AuthRoute path="/signup" component={SignupContainer} />

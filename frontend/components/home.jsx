@@ -1,10 +1,21 @@
 import React from 'react';
-import {useSelector} from 'react-redux';
+import {useSelector, useDispatch} from 'react-redux';
 import {Link, Redirect} from 'react-router-dom';
+import {login} from '../actions/session';
 
 
 export default ()=> {
     const currentUser = useSelector((state) => state.session.currentUser);
+
+    const dispatch = useDispatch();
+    
+
+    const handleDemoUser = () => {
+        dispatch(login({
+            username: 'test',
+            password: 'testtest',
+        }));
+    };
 
 
     if (currentUser)
@@ -19,7 +30,7 @@ export default ()=> {
 
 <Link className="hbtn" id="hlogin" to="/login">Log In</Link>
 
-<Link className="hbtn" id="hdemo" to="/">Demo User</Link>
+<Link className="hbtn" id="hdemo" to="/" onClick={handleDemoUser}>Demo User</Link>
 </div>
         )
     };

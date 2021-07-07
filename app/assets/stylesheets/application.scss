@@ -14,75 +14,91 @@
  *= require_self
  */
 
- body {
+body {
   background-color: #001935;
   color: white;
-  font-family: Georgia, 'Times New Roman', Times, serif;
-    text-decoration: none;
-      background: asset-url('back.jpeg') no-repeat center center fixed; 
+  font-family: Georgia, "Times New Roman", Times, serif;
+  text-decoration: none;
+  background: asset-url("back.jpeg") no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
+  overflow: hidden;
 }
-  
 
- .nav-bar {
+.page {
+  display: grid;
+  grid-template-rows: 45px calc(100vh - 45px); /* height limitation on second row */
+  grid-template-areas:
+    "header"
+    "content";
+}
+
+.header {
+}
+
+.content {
+  /* overflow condition on parent */
+}
+
+.nav-bar {
+  grid-area: header;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  padding: 0px 5px 0px 10px;
+  align-items: center;
+  height: 45px;
+  width: 100%;
+  top: 0px;
+  position: fixed;
+  left: 0px;
+  overflow: hidden;
+
+
+
+  grid-area: header;
+    // background-color: darkgray;
     color: white;
-   display: flex;
-   justify-content: space-between;
-   padding: 0px 5px 0px 10px;
-   align-items: center;
-   height: 45px;
-   width: 100%;
-   top: 0px;
-   position: fixed;
-   left: 0px;
-   overflow: hidden;
-  //  border-bottom: 1px solid rgb(223, 221, 221);
-  //  background-color: #001935;
-  
-  
- }
+    display: flex;
+    justify-content: space-between;
+    padding: 0px 5px 0px 10px;
+    align-items: center;
+   
+}
 
+.nav-bar p {
+  color: black;
+}
 
- .nav-bar p {
-   color:black;
-  }
+.button {
+  background-color: #001935;
+  padding: 10px;
+  text-decoration: none;
+  border-radius: 3px;
+}
 
+#signup {
+  color: #000000;
+  background-color: #00cf35;
+  margin: 0px 10px 0px 0px;
+  padding: 6px 15px;
+  font: 16px Favorit, "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
 
-    .button {
-     background-color: #001935;
-     padding: 10px;
-     text-decoration: none;
-     border-radius: 3px;
-     
+#login {
+  color: #000000;
+  background-color: #00b8ff;
+  margin: 0px 10px 0px 0px;
+  padding: 6px 15px;
+  font: 16px Favorit, "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
 
-  
-   }
-
-      #signup {
-         color:#000000;
-         background-color: #00cf35;
-         margin: 0px 10px 0px 0px;
-         padding: 6px 15px;
-         font: 16px Favorit, "Helvetica Neue", Helvetica, Arial, sans-serif;
-        }
-
-           #login {
-         color:#000000;
-         background-color: #00b8ff;
-         margin: 0px 10px 0px 0px;
-         padding: 6px 15px;
-         font: 16px Favorit, "Helvetica Neue", Helvetica, Arial, sans-serif;
-        }
-
-
-        .logo {
-            color:#FFFFFF;
-            margin: 0px 10px 0px 0px;
-            font: 30px Georgia, 'Times New Roman', Times, serif;
-            text-decoration: none;
-            font-weight: bold;
-             }
-
+.logo {
+  color: #ffffff;
+  margin: 0px 10px 0px 0px;
+  font: 30px Georgia, "Times New Roman", Times, serif;
+  text-decoration: none;
+  font-weight: bold;
+}
