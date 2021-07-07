@@ -1,10 +1,10 @@
 import {combineReducers} from 'redux';
 import sessionReducer from './session';
 import errorsReducer from './error';
-// import entitiesReducer from './entities';
+import leelsReducer from './leels';
 
 export default combineReducers({
-    // entities: entitiesReducer,
+    leels: leelsReducer,
     session: sessionReducer,
     errors: errorsReducer
      });

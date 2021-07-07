@@ -10,10 +10,10 @@ class User < ApplicationRecord
 
     after_initialize :ensure_session_token
 
-    has_many :leels,
+    has_many :leel_posts,
     primary_key: :id,
     foreign_key: :author_id,
-    class_name: 'Leel'
+    class_name: 'LeelPost'
 
     has_many :likes,
     primary_key: :id,
@@ -22,7 +22,7 @@ class User < ApplicationRecord
 
     has_many :liked_leels,
     through: :likes,
-    source: :leel
+    source: :leel_post
 
     def self.find_by_credentials(username, password)
         user= User.find_by(username: username)

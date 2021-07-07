@@ -10,17 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_07_02_191755) do
+ActiveRecord::Schema.define(version: 2021_07_06_232830) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "leels", force: :cascade do |t|
+  create_table "leel_posts", force: :cascade do |t|
     t.text "body", null: false
     t.integer "author_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["author_id"], name: "index_leels_on_author_id"
+    t.index ["author_id"], name: "index_leel_posts_on_author_id"
   end
 
   create_table "likes", force: :cascade do |t|

@@ -13,8 +13,8 @@ export default ({currentUser, logout, ...props}) =>{
         </div>
     ):(
         <div>
-            {(location.pathname === '/login' || location.pathname === '/' || location.pathname === '/leels') && <Link className="button" id="signup" to="/signup">Sign Up</Link>}
-            {(location.pathname === '/signup' || location.pathname === '/' || location.pathname === '/leels') &&<Link className="button" id="login" to="/login">Log in</Link>}
+            {(location.pathname === '/login' || location.pathname === '/' || location.pathname === '/leel_posts') && <Link className="button" id="signup" to="/signup">Sign Up</Link>}
+            {(location.pathname === '/signup' || location.pathname === '/' || location.pathname === '/leel_posts') &&<Link className="button" id="login" to="/login">Log in</Link>}
         </div>
     );
  

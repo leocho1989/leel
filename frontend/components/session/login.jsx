@@ -27,7 +27,7 @@ handleInput(type) {
 handleSubmit(e) {
     e.preventDefault();
     this.props.login(this.state)
-    .then(() => this.props.history.push('/leels'));
+    .then(() => this.props.history.push('/leel_posts'));
 }
 render() {
     return (

@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class LeelsControllerTest < ActionDispatch::IntegrationTest
+class LeelPostsControllerTest < ActionDispatch::IntegrationTest
   # test "the truth" do
   #   assert true
   # end

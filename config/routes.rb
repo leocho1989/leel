@@ -4,14 +4,14 @@ Rails.application.routes.draw do
 
   namespace :api, defaults: {format: :json} do
     resources :users do
-    resources :leels, only: [:index]
+    resources :leel_posts, only: [:index]
     end
 
     resource :session, only: [ :create, :destroy ]
 
     post '/search', to: 'users#search'
 
-    resources :leels
+    resources :leel_posts
     resources :likes, only: [:create]
     delete '/likes', to:'likes#destroy'
     
