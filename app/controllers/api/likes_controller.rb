@@ -12,7 +12,7 @@ class Api::LikesController < ApplicationController
     end
 
     def destroy
-        @like. = Like.find_by(user_id: current_user.id, leel_id: params[:id])
+        @like= Like.find_by(user_id: current_user.id, leel_id: params[:id])
         @like.destroy
         @leel = @like.leel
         render "api/leels/show"
