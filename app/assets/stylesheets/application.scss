@@ -32,13 +32,17 @@
    display: flex;
    justify-content: space-between;
    padding: 0px 5px 0px 10px;
-   /* background: #001935; */
    align-items: center;
-   height: 38px;
+   height: 45px;
    width: 100%;
    top: 0px;
    position: fixed;
    left: 0px;
+   overflow: hidden;
+  //  border-bottom: 1px solid rgb(223, 221, 221);
+  //  background-color: #001935;
+  
+  
  }
 
 
