@@ -1,0 +1,22 @@
+.postbuttons {
+  width:100%;
+    text-align: center;
+    justify-content: space-between;
+    display: flex;
+      
+      
+}
+
+.postbtn {
+  display: inline-block;
+  border: none;
+width: auto;
+height: auto;
+text-align: center;
+vertical-align: bottom;
+position: relative;
+}
+  img {
+    width: 45px;
+    height: 52px;
+  }

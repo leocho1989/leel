@@ -1,5 +1,6 @@
 import React from 'react';
 import LeelItem from './leel_item';
+import NewPost from './new_post';
 
 class LeelIndex extends React.Component {
 
@@ -16,7 +17,12 @@ class LeelIndex extends React.Component {
         const {leels} = this.props;
 
         return (
+            
             <div className="leels">
+                <ul className="new_post"><NewPost />
+                </ul>
+                
+                
                 <ul>
 
             {
