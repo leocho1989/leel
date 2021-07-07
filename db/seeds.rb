@@ -16,8 +16,8 @@ user101 = User.create(username: "Andree Yundt", email: "lucy_kling@leffler.net",
 user102 = User.create(username: "Jeane Abernathy", email: "suzi@abernathy-ebert.org", password: '12345678')
 user103 = User.create(username: "Chanell Rau", email: "chu@funk-walsh.org", password: '12345678')
 user104 = User.create(username: "Marybeth Carter Esq", email: "kristina.rogahn@goodwin.info", password: '12345678')
-user105 = User.create(username: "Cora Lindgren", email: Faker::Internet.email, password: '12345678')
-user106 = User.create(username: "test", email: Faker::Internet.email, password: 'testtest')
+user105 = User.create(username: "Cora Lindgren", email: "lan@cronin.io", password: '12345678')
+user106 = User.create(username: "test", email: "test@google.com", password: 'testtest')
 
 leel101 = LeelPost.create(body: "Dark and difficult times lie ahead. Soon we must all face the choice between what is right and what is easy.", author_id: "1")
 leel101 = LeelPost.create(body: "Dark and difficult times lie ahead. Soon we must all face the choice between what is right and what is easy.", author_id: "1")
