@@ -15,7 +15,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "webpack": "webpack --watch --mode=development",
-    "postinstall": "webpack"
+    "postinstall": "webpack",
+    "start": "nodemon --exec babel-node src/server.js"
   },
   "repository": {
     "type": "git",
