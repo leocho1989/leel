@@ -32,7 +32,7 @@ render() {
         <div>
 
             <form className='form'>
-<h2>Join us now!</h2>
+<h2 className='sentence'>Join us now!</h2>
 {this.state.errorMessages.map((error, i) => <div key={i}><p>*{error}</p></div>)}
             <label >
                 
