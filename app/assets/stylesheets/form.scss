@@ -39,20 +39,35 @@ input {
 }
 
  #btn {
-     margin-top: 3px;
+     margin-top: 2px;
          color:#000000;
          background-color: #00b8ff;
          padding: 6px 15px;
          font: 16px Favorit, "Helvetica Neue", Helvetica, Arial, sans-serif;
          border-radius: 3px;
-         width: 80%;
+         width: 280px;
          border: none;
+         text-decoration: none;
+        }
+
+         #demobtn {
+     margin-top: 2px;
+         color:#000000;
+         background-color: #fa6dba;
+         padding: 6px 15px;
+         font: 16px Favorit, "Helvetica Neue", Helvetica, Arial, sans-serif;
+         border-radius: 3px;
+         width: 280px;
+         border: none;
+         text-decoration: none;
         }
 
         .sentence {
             color: #ffffff;
             font-size: 20px;
         }
+
+
 
 
 @keyframes NO {

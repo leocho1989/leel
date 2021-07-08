@@ -15,7 +15,7 @@ export default ({ leel, likeLeel, unLikeLeel}) =>{
         <li className="leels">
             <div className="post">
             
-            <p className="author">Authour:{leel.author_username}</p>
+            <p className="author">{leel.author_username}</p>
             <h3 className="body_post" >{leel.body}</h3>
             <p className="like_count"><strong>Likes: 0{leel.likes}</strong></p>
             <button className="like_button" onClick={likeButtonAction}>{likeButtonText}</button>

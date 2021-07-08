@@ -1,5 +1,6 @@
 import React from 'react';
 import {Redirect} from 'react-router-dom';
+import DemoUser from './demo_user';
 
 class Login extends React.Component {
 
@@ -51,6 +52,7 @@ render() {
             </label>
             <br></br>
             <button id="btn" onClick={this.handleSubmit}>Log in</button>
+            <p><DemoUser /></p>
         </form>
 
     </div>

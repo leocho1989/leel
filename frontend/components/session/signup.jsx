@@ -1,4 +1,5 @@
 import React from 'react';
+import DemoUser from './demo_user';
 class Signup extends React.Component {
     constructor(props) {
         super(props);
@@ -9,6 +10,7 @@ class Signup extends React.Component {
             errorMessages: []
         };
         this.handleSubmit= this.handleSubmit.bind(this);
+
          }
 
              componentDidUpdate(PreProps){
@@ -16,6 +18,8 @@ class Signup extends React.Component {
          this.setState({ errorMessages: this.props.errors});}
 
     }
+
+   
 
     handleInput(type) {
         return (e)=>{
@@ -48,6 +52,7 @@ render() {
             </label>
             <br></br>
             <button id="btn" onClick={this.handleSubmit}>Sign Up</button>
+            <p><DemoUser /></p>
             </form>
             
         </div>
