@@ -17777,7 +17777,7 @@ textarea.ant-input {
 }
 .ant-form-item-has-warning .ant-input:not(.ant-input-disabled):focus,
 .ant-form-item-has-warning .ant-input-affix-wrapper:not(.ant-input-affix-wrapper-disabled):focus,
-.ant-form-item-has-warning .ant-input:not(.ant-input-disabled)-focused,
+.ant-form-item-has-warning .ant-input:not(.ant-input-disabled),
 .ant-form-item-has-warning .ant-input-affix-wrapper:not(.ant-input-affix-wrapper-disabled)-focused {
   border-color: #ffc53d;
   border-right-width: 1px !important;
@@ -17853,7 +17853,7 @@ textarea.ant-input {
 }
 .ant-form-item-has-error .ant-input:not(.ant-input-disabled):focus,
 .ant-form-item-has-error .ant-input-affix-wrapper:not(.ant-input-affix-wrapper-disabled):focus,
-.ant-form-item-has-error .ant-input:not(.ant-input-disabled)-focused,
+.ant-form-item-has-error .ant-input:not(.ant-input-disabled),
 .ant-form-item-has-error .ant-input-affix-wrapper:not(.ant-input-affix-wrapper-disabled)-focused {
   border-color: #ff7875;
   border-right-width: 1px !important;
