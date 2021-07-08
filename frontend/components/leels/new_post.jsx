@@ -1,4 +1,11 @@
 import React from 'react';
+import Text from './Text';
+import Photo from './Photo';
+import Quote from './Quote';
+import Link from './Link';
+import Chat from './Chat';
+import Audio from './Audio';
+import Video from './Video';
 
 export default ()=> {
 
@@ -6,18 +13,15 @@ export default ()=> {
 return (
 <>
 <div className="postbuttons">
-<div className="postbtn"><img src={window.textURL} /><p>Text</p></div>
-<div className="postbtn"><img src={window.cameraURL} /><p>Photo</p></div>
 
-<div className="postbtn"><img src={window.quotationURL} /><p>Quote</p></div>
-
-<div className="postbtn"><img src={window.httpURL} /><p>Link</p></div>
-
-<div className="postbtn"><img src={window.chatURL} /><p>chat</p></div>
-
-<div className="postbtn"><img src={window.headphonesURL} /><p>Audio</p></div>
-
-<div className="postbtn"><img src={window.videoURL} /><p>Video</p></div>
+  <Text />
+  <Photo />
+  <Quote />
+  <Link />
+  <Chat />
+  <Audio />
+  <Video />
+  
 
 </div>
 
