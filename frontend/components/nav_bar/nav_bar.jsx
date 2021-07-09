@@ -7,7 +7,7 @@ export default ({currentUser, logout, ...props}) =>{
 
     let location = useLocation();
 
-    const menu = (
+   const menu = (
   <Menu>
     <Menu.Item key="1">
       <a target="_blank" rel="noopener noreferrer" href="/">
@@ -28,7 +28,6 @@ export default ({currentUser, logout, ...props}) =>{
     <Menu.Item key="4" danger onClick={logout}>Log Out</Menu.Item>
   </Menu>
 );
-
     const display = currentUser ? (
         <div>
              <div>
