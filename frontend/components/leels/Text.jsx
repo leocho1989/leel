@@ -28,9 +28,7 @@ export default ()=> {
     const leel =Object.assign({}, {body,
     author_id:window.current_user.id} );
     
-    dispatch(createLeel(leel));
-
-    // window.location.reload();
+    dispatch(createLeel(leel)).then(setBody(""));
     
   };
 

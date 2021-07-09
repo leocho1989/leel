@@ -2,17 +2,17 @@ import React from 'react';
 import { Avatar } from 'antd';
 import { UserOutlined } from '@ant-design/icons';
 import { useDispatch } from 'react-redux';
-import {deleteLeel} from '../../actions/leels';
+import { deleteLeel,likeLeel, unLikeLeel } from '../../actions/leels';
 
 
-export default ({ leel, likeLeel, unLikeLeel}) =>{
-
+export default ({ leel }) =>{
+   
     const dispatch = useDispatch();
     const handleDelete =(e)=>{
         e.preventDefault();
         dispatch(deleteLeel(leel));
     };
-    const delete_button = (window.current_user.username===leel.author_username) ? 
+    const delete_button = (window.current_user && (window.current_user.username===leel.author_username)) ? 
     (<>
   <button className="deletebtn" onClick={handleDelete}>Delete</button>
   </>
