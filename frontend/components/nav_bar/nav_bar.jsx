@@ -9,22 +9,23 @@ export default ({currentUser, logout, ...props}) =>{
 
     const menu = (
   <Menu>
-    <Menu.Item>
+    <Menu.Item key="1">
       <a target="_blank" rel="noopener noreferrer" href="/">
         1st menu item
       </a>
-    </Menu.Item>
-    <Menu.Item icon={<DownOutlined />} disabled>
+    </Menu.Item >
+    <Menu.Item key="2" icon={<DownOutlined />} disabled>
       <a target="_blank" rel="noopener noreferrer" href="/">
         2nd menu item (disabled)
       </a>
-    </Menu.Item>
-    <Menu.Item disabled>
+    </Menu.Item >
+    
+    <Menu.Item key="3" disabled>
       <a target="_blank" rel="noopener noreferrer" href="/">
         3rd menu item (disabled)
       </a>
-    </Menu.Item>
-    <Menu.Item danger>a danger item</Menu.Item>
+    </Menu.Item >
+    <Menu.Item key="4" danger>a danger item</Menu.Item>
   </Menu>
 );
 
