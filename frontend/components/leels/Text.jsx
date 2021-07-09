@@ -23,7 +23,7 @@ export default ()=> {
     e.preventDefault();
     setIsModalVisible(false);
 
-    // dispatch(createLeel({leel: body}));
+    
 
     const leel =Object.assign({}, {body,
     author_id:window.current_user.id} );
@@ -31,6 +31,7 @@ export default ()=> {
     dispatch(createLeel(leel));
 
     // window.location.reload();
+    
   };
 
   const handleCancel = () => {
