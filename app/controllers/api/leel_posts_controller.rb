@@ -1,6 +1,6 @@
 class Api::LeelPostsController < ApplicationController
     def create
-        @leel = LeelPost.new(leel_params)
+        @leel = current_user.leel_posts.new(leel_params)
         if @leel.save
             render :show
         else
@@ -53,7 +53,7 @@ class Api::LeelPostsController < ApplicationController
     private
     
     def leel_params
-        params.require(:leel_post).permit(:body, :author_id)
+        params.permit(:body, :author_id)
     end
 
     def selected_leel

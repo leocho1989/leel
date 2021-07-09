@@ -1,7 +1,7 @@
 import React from 'react';
 import {Link, useLocation} from 'react-router-dom';
 import { Menu, Dropdown } from 'antd';
-import { DownOutlined, GithubOutlined, UserOutlined } from '@ant-design/icons';
+import { DownOutlined, GithubOutlined, UserOutlined, HeartOutlined,UnorderedListOutlined, UserAddOutlined } from '@ant-design/icons';
 
 export default ({currentUser, logout, ...props}) =>{
 
@@ -11,18 +11,18 @@ export default ({currentUser, logout, ...props}) =>{
   <Menu>
     <Menu.Item key="1">
       <a target="_blank" rel="noopener noreferrer" href="/">
-        1st menu item
+        <UnorderedListOutlined /> My leels
       </a>
     </Menu.Item >
-    <Menu.Item key="2" icon={<DownOutlined />} disabled>
+    <Menu.Item key="2" disabled>
       <a target="_blank" rel="noopener noreferrer" href="/">
-        2nd menu item (disabled)
+        <HeartOutlined /> Likes (disabled)
       </a>
     </Menu.Item >
     
     <Menu.Item key="3" disabled>
       <a target="_blank" rel="noopener noreferrer" href="/">
-        3rd menu item (disabled)
+        <UserAddOutlined /> Following (disabled)
       </a>
     </Menu.Item >
     <Menu.Item key="4" danger onClick={logout}>Log Out</Menu.Item>

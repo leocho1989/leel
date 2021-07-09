@@ -34,7 +34,7 @@ class LeelIndex extends React.Component {
                 <ul>
 
             {
-                leels.map(leel=>(
+                leels.reverse().map(leel=>(
                     <LeelItem
                         key={`leel${leel.id}`}
                         leel = {leel}
