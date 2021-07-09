@@ -41,13 +41,9 @@ class Api::LeelPostsController < ApplicationController
     end
 
     def destroy
-        @leel = selected_leel
-        if @leel
-            @leel.destroy
-            render:show
-        else
-            render ['Could not find Leel']
-        end
+      @leel = current_user.leel_posts.find(params[:id])
+      @leel.destroy
+      render json: @leel
     end
 
     private

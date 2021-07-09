@@ -15,18 +15,24 @@ return (
 <div className="postbuttons">
 
   <Text />
+
+  <div className="vl"></div>
   
   <Photo />
+
+  <div className="vl"></div>
   
   <Quote />
+
+  <div className="vl"></div>
   
   <Link />
   
-  <Chat />
+  {/* <Chat />
   
   <Audio />
   
-  <Video />
+  <Video /> */}
   
 
 </div>

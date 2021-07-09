@@ -1,20 +1,28 @@
 .postbuttons {
-  width:100%;
+  width:80%;
     text-align: center;
     justify-content: space-between;
     display: flex;
+    margin-left: 50px;
+    // margin-right: 10px;
       
       
 }
 
-#postbtn {
-  display: inline-block;
-  border: none;
+.postbtn {
+//   display: inline-block;
+//   border: none;
 width: auto;
 height: auto;
-text-align: center;
-vertical-align: bottom;
+// text-align: center;
+// vertical-align: bottom;
 position: relative;
+
+    vertical-align: top;
+    display: inline-block;
+    text-align: center;
+    justify-content: space-between;
+    // display: flex;
 }
   img {
     width: 50px;
@@ -27,4 +35,15 @@ position: relative;
     border: none;
     background: transparent;
     cursor: pointer;
+    display: block;
+    // text-align: center;
+    // justify-content: center;
+    margin-left: 8px;
   }
+
+  .vl {
+  border-left: 1px dotted rgba(0,0,0,1);
+  height:60px;
+  display: flex;
+  
+}

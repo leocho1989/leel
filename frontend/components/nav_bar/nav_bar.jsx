@@ -11,18 +11,18 @@ export default ({currentUser, logout, ...props}) =>{
     (<>
   <Menu>
     <Menu.Item key="1">
-      <a target="_blank" rel="noopener noreferrer" href={`/#/users/${currentUser.id}`}>
+      <a href={`/#/users/${currentUser.id}`}>
         <UnorderedListOutlined /> My leels
       </a>
     </Menu.Item >
     <Menu.Item key="2" disabled>
-      <a target="_blank" rel="noopener noreferrer" href="/">
+      <a href="/">
         <HeartOutlined /> Likes (disabled)
       </a>
     </Menu.Item >
     
     <Menu.Item key="3" disabled>
-      <a target="_blank" rel="noopener noreferrer" href="/">
+      <a href="/">
         <UserAddOutlined /> Following (disabled)
       </a>
     </Menu.Item >

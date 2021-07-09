@@ -47,7 +47,7 @@ export const updateLeel = leel => dispatch => (
 );
 
 export const deleteLeel = leel => dispatch => (
-    LeelAPIUtil.deleteLeel(leel).then(leel=> dispatch(removeLeel(leel)))
+    LeelAPIUtil.deleteLeel(leel).then(leel=> {dispatch(removeLeel(leel));dispatch(fetchLeels());})
 );
 
 

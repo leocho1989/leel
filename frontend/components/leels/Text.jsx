@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { Modal, Button, Input } from 'antd';
 import {createLeel} from '../../actions/leels';
-// import ErrorList from './ErrorList';
+
 
 
 export default ()=> {
