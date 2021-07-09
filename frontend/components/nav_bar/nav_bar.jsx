@@ -7,10 +7,11 @@ export default ({currentUser, logout, ...props}) =>{
 
     let location = useLocation();
 
-   const menu = (
+   const menu = currentUser ? 
+    (<>
   <Menu>
     <Menu.Item key="1">
-      <a target="_blank" rel="noopener noreferrer" href="/">
+      <a target="_blank" rel="noopener noreferrer" href={`/#/users/${currentUser.id}`}>
         <UnorderedListOutlined /> My leels
       </a>
     </Menu.Item >
@@ -27,7 +28,8 @@ export default ({currentUser, logout, ...props}) =>{
     </Menu.Item >
     <Menu.Item key="4" danger onClick={logout}>Log Out</Menu.Item>
   </Menu>
-);
+  </>
+) : null;
 
     const display = currentUser ? (
         <div>
