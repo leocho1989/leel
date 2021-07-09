@@ -28,6 +28,7 @@ export default ({currentUser, logout, ...props}) =>{
     <Menu.Item key="4" danger onClick={logout}>Log Out</Menu.Item>
   </Menu>
 );
+
     const display = currentUser ? (
         <div>
              <div>
