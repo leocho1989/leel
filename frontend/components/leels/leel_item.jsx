@@ -1,4 +1,6 @@
 import React from 'react';
+import { Avatar } from 'antd';
+import { UserOutlined } from '@ant-design/icons';
 
 
 export default ({ leel, likeLeel, unLikeLeel}) =>{
@@ -11,8 +13,11 @@ export default ({ leel, likeLeel, unLikeLeel}) =>{
 
     return (
         <>
-       
-        <li className="leels">
+        <div className="leel_row">
+        <div className="avatar_post">
+       <Avatar size={64} icon={<UserOutlined />} />
+       </div>
+        <li className="leels_show">
             <div className="post">
             
             <p className="author">{leel.author_username}</p>
@@ -21,6 +26,7 @@ export default ({ leel, likeLeel, unLikeLeel}) =>{
             <button className="like_button" onClick={likeButtonAction}>{likeButtonText}</button>
             </div>
         </li>
+        </div>
         </>
     )
     

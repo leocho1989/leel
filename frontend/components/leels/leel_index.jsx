@@ -2,6 +2,8 @@ import React from 'react';
 import LeelItem from './leel_item';
 import NewPost from './new_post';
 
+
+
 class LeelIndex extends React.Component {
 
     constructor(props) {
@@ -19,8 +21,14 @@ class LeelIndex extends React.Component {
         return (
             
             <div className="leels">
-                <ul className="new_post"><NewPost />
-                </ul>
+                <div className="leel_row">
+    <div className="avatar_post">
+        <img src={window.avatarURL} />
+    </div>
+                
+                <div className="new_post"><NewPost />
+                </div>
+                </div>
                 
                 
                 <ul>
