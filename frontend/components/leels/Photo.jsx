@@ -19,7 +19,7 @@ export default ()=> {
 
 return (
 
-    <div className="postbtn"><img src={window.cameraURL} onClick={showModal} /><button onClick={showModal} >Photo</button>
+    <div className="postbtn"><img src={window.cameraURL} onClick={showModal} /><button className="textbtn" onClick={showModal} >Photo</button>
 <Modal title="Basic Modal" visible={isModalVisible} onOk={handleOk} onCancel={handleCancel}>
         <p>2</p>
         <p>Some contents...</p>

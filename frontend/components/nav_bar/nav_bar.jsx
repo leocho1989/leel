@@ -1,7 +1,7 @@
 import React from 'react';
 import {Link, useLocation} from 'react-router-dom';
 import { Menu, Dropdown } from 'antd';
-import { DownOutlined } from '@ant-design/icons';
+import { DownOutlined, GithubOutlined, UserOutlined } from '@ant-design/icons';
 
 export default ({currentUser, logout, ...props}) =>{
 
@@ -25,22 +25,20 @@ export default ({currentUser, logout, ...props}) =>{
         3rd menu item (disabled)
       </a>
     </Menu.Item >
-    <Menu.Item key="4" danger>a danger item</Menu.Item>
+    <Menu.Item key="4" danger onClick={logout}>Log Out</Menu.Item>
   </Menu>
 );
 
     const display = currentUser ? (
         <div>
              <div>
+                 <GithubOutlined />&nbsp;&nbsp;&nbsp;
                <Dropdown overlay={menu}>
     <a className="ant-dropdown-link" onClick={e => e.preventDefault()}>
-      {currentUser.username} <DownOutlined />
+      <UserOutlined />&nbsp;{currentUser.username} <DownOutlined />
     </a>
   </Dropdown>
   </div>
-{/*    
-            <div className="username">{currentUser.username}</div>
-            <button className="button" id="logout" onClick={logout}>Log out</button> */}
         </div> 
     ):(
         <div>

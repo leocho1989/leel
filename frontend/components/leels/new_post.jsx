@@ -15,11 +15,17 @@ return (
 <div className="postbuttons">
 
   <Text />
+  
   <Photo />
+  
   <Quote />
+  
   <Link />
+  
   <Chat />
+  
   <Audio />
+  
   <Video />
   
 
