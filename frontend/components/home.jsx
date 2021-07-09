@@ -15,7 +15,6 @@ export default ()=> {
             username: 'test',
             password: 'testtest',
         }));
-        // window.location.reload();
     };
 
 

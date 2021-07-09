@@ -2,22 +2,23 @@ import React from 'react';
 import LeelItem from './leel_item';
 import NewPost from './new_post';
 
-
-
 class LeelIndex extends React.Component {
 
     constructor(props) {
         super(props);
+
+        
     }
 
     componentDidMount() {
         this.props.fetchLeels();
-
     }
+
+
 
     render() {
         const {leels} = this.props;
-
+    
         return (
             
             <div className="leels">
@@ -41,7 +42,9 @@ class LeelIndex extends React.Component {
                          likeLeel = {leels.likeLeel}
                          unLikeLeel = {leels.unLikeLeel} />
                          
-                )) }
+                )) 
+                
+                }
                 </ul>
             </div>
                 )}

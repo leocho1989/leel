@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { Modal, Button, Input } from 'antd';
 import {createLeel} from '../../actions/leels';
 
@@ -12,6 +12,9 @@ export default ()=> {
   const [body,setBody] = useState("");
 
   const dispatch = useDispatch();
+
+  const currentUser = useSelector((state) => state.session.currentUser);
+
 
  
 
@@ -26,7 +29,7 @@ export default ()=> {
     
 
     const leel =Object.assign({}, {body,
-    author_id:window.current_user.id} );
+    author_id:currentUser.id} );
     
     dispatch(createLeel(leel)).then(setBody(""));
     

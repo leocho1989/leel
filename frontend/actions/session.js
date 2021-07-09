@@ -19,6 +19,6 @@ const logoutCurrentUser = () => ({
 export const createNewUser = formUser=>dispatch=> postUser(formUser).then(
     user => {dispatch(receiveCurrentUser(user)); dispatch(clearError())}, error=>dispatch(receiveError(error.responseJSON)));
 
-export const login=formUser=>dispatch=> postSession(formUser).then(user=>{dispatch(receiveCurrentUser(user)); dispatch(clearError())}, error=>dispatch(receiveError(error.responseJSON)));
+export const login=formUser=>dispatch=> postSession(formUser).then(user=>{dispatch(receiveCurrentUser(user)); dispatch(clearError()); }, error=>dispatch(receiveError(error.responseJSON)));
 
 export const logout = ()=>dispatch=> deleteSession().then(()=>dispatch(logoutCurrentUser()));
