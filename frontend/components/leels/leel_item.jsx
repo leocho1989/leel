@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Avatar } from 'antd';
-import { UserOutlined, HeartFilled, HeartOutlined, CrownTwoTone } from '@ant-design/icons';
+import { UserOutlined, HeartFilled, HeartOutlined, CrownTwoTone, EditOutlined, CloseOutlined } from '@ant-design/icons';
 import { useDispatch, useSelector } from 'react-redux';
 import { deleteLeel,likeLeel, unLikeLeel, updateLeel } from '../../actions/leels';
 import { Modal, Button, Input } from 'antd';
@@ -52,7 +52,7 @@ const onChange = e => {
 const edit_button = (currentUser.username===leel.author_username) ? 
     (<>
 
-  <button className="editbtntext" onClick={showModal} >edit</button>
+  <button className="editbtntext" onClick={showModal} ><EditOutlined /></button>
 <Modal title="Edit leel" visible={isModalVisible} onOk={handleOk} onCancel={handleCancel}>
  
         <TextArea showCount maxLength={240}
@@ -66,7 +66,7 @@ const edit_button = (currentUser.username===leel.author_username) ?
     const delete_button = (currentUser.username===leel.author_username) ? 
     (<>
 
-  <button className="deletebtn" onClick={handleDelete}>delete</button>
+  <button className="deletebtn" onClick={handleDelete}><CloseOutlined /></button>
   </>
 ) : null;
 
@@ -91,9 +91,10 @@ const edit_button = (currentUser.username===leel.author_username) ?
             <h3 className="body_post" >{leel.body}</h3>
             
             <div className="like_delete_btn" >
-            <button className="likebtnheart" onClick={likeButtonAction}>{likeButtonText}</button>
-            {edit_button}
+              {edit_button}
             {delete_button}
+            <button className="likebtnheart" onClick={likeButtonAction}>{likeButtonText}</button>
+            
             </div>
             </div>
         </li>

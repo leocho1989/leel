@@ -23,9 +23,9 @@ export default ()=> {
         return (<Redirect to="/leel_posts" />);
     }
         return(
-            <div className="home">
-                <h1 className="homelogo">leel</h1>
-                <p className="moto">A place for you to share things!</p>
+            <div id="home_leel">
+                <div id="logo_leel">leel</div>
+                <p id="moto">A place for you to share things!</p>
 <Link className="hbtn" id="hgetstarted" to="/signup">Get Started</Link>    
 
 <Link className="hbtn" id="hlogin" to="/login">Log In</Link>

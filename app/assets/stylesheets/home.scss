@@ -7,7 +7,7 @@
 
 
 
-.home {
+#home_leel {
 
     overflow: hidden;
     opacity: 0;
@@ -15,7 +15,7 @@
     animation: arrive 500ms ease-in-out 0.9s forwards;
  
     text-align: center; 
-	border-radius: 20px;
+	// border-radius: 20px;
 	width: 350px;
 	height: 300px;
 	margin: auto;
@@ -27,13 +27,15 @@
  
 }
 
-.homelogo {
+#logo_leel {
     color: white;
     text-decoration: bold;
-    font-size: 30px;
+    font-size: 40px;
+   
+    font-family: 'Lobster', cursive;
 }
 
-.moto {
+#moto {
     color: white;
     font-size: 15px;
     
