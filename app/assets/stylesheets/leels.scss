@@ -101,13 +101,15 @@ width: 70px;
 
 .body_post {
     color:rgb(85, 84, 84);
-    font-size: 12pt;
+    font-size: 10pt;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    // border-bottom: 1px dotted lightgray;
 }
 
 .author {
-  display: flex;
+  // display: flex;
   color: black;
+  border-bottom: 1px dotted lightgray;
 }
 
 .like_count {

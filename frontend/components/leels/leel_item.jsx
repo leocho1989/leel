@@ -1,8 +1,9 @@
 import React from 'react';
 import { Avatar } from 'antd';
-import { UserOutlined, HeartFilled, HeartOutlined } from '@ant-design/icons';
+import { UserOutlined, HeartFilled, HeartOutlined, CrownTwoTone } from '@ant-design/icons';
 import { useDispatch, useSelector } from 'react-redux';
 import { deleteLeel,likeLeel, unLikeLeel } from '../../actions/leels';
+
 
 
 export default ({ leel }) =>{
@@ -15,6 +16,7 @@ export default ({ leel }) =>{
     };
     const delete_button = (currentUser.username===leel.author_username) ? 
     (<>
+
   <button className="deletebtn" onClick={handleDelete}>delete</button>
   </>
 ) : null;
@@ -36,7 +38,7 @@ export default ({ leel }) =>{
         <li className="leels_show">
             <div className="post">
             
-            <p className="author">{leel.author_username}</p>
+            <p className="author"> <CrownTwoTone />&nbsp;{leel.author_username}</p>
             <h3 className="body_post" >{leel.body}</h3>
             
             <div className="like_delete_btn" >

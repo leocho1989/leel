@@ -1,7 +1,7 @@
 import React from 'react';
 import {Link, useLocation} from 'react-router-dom';
 import { Menu, Dropdown } from 'antd';
-import { DownOutlined, GithubOutlined, UserOutlined, HeartOutlined,UnorderedListOutlined, UserAddOutlined } from '@ant-design/icons';
+import { DownOutlined, GithubOutlined, UserOutlined, HeartOutlined,UnorderedListOutlined, UserAddOutlined, HomeFilled, LinkedinFilled } from '@ant-design/icons';
 
 export default ({currentUser, logout, ...props}) =>{
 
@@ -34,7 +34,7 @@ export default ({currentUser, logout, ...props}) =>{
     const display = currentUser ? (
         <div>
              <div>
-                 <GithubOutlined />&nbsp;&nbsp;&nbsp;
+                 <HomeFilled />&nbsp;&nbsp;&nbsp;<GithubOutlined />&nbsp;&nbsp;&nbsp;<LinkedinFilled />&nbsp;&nbsp;&nbsp;
                <Dropdown overlay={menu}>
     <a className="ant-dropdown-link" onClick={e => e.preventDefault()}>
       <UserOutlined />&nbsp;{currentUser.username} <DownOutlined />

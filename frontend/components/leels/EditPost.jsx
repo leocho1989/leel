@@ -1,15 +1,15 @@
 import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Modal, Button, Input } from 'antd';
-import {createLeel} from '../../actions/leels';
+import {updateLeel} from '../../actions/leels';
 
 
 
-export default ()=> {
+export default (leel)=> {
   const { TextArea } = Input;
 
   const [isModalVisible, setIsModalVisible] = useState(false);
-  const [body,setBody] = useState("");
+  const [body,setBody] = useState(leel.body);
 
   const dispatch = useDispatch();
 
@@ -31,7 +31,9 @@ export default ()=> {
     const leel =Object.assign({}, {body,
     author_id:currentUser.id} );
     
-    dispatch(createLeel(leel)).then(setBody(""));
+    dispatch(updateLeel(leel));
+    
+    // .then(setBody(""));
     
   };
 
@@ -48,12 +50,12 @@ export default ()=> {
 
 return (
 
-    <div className="postbtn"><img src={window.textURL} onClick={showModal} /><button className="textbtn" onClick={showModal} >Text</button>
+    <div className="editbtn"><button className="editbtntext" onClick={showModal} >edit</button>
 <Modal title="New leel" visible={isModalVisible} onOk={handleOk} onCancel={handleCancel}>
  
         <TextArea showCount maxLength={240}
             value={ body }
-            placeholder="Go ahead, put anything" onChange={onChange} />
+            placeholder={leel.body} onChange={onChange} />
       </Modal>
 </div>
 
