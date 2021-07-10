@@ -51,12 +51,12 @@ export const deleteLeel = leel => dispatch => (
 );
 
 
-export const likeLeel= id=>dispatch=>{
-    return postLikeToLeel(id)
-    .then(leel => dispatch(receiveLeel(leel)));
-};
+export const likeLeel= id=>dispatch=>(
+    LeelAPIUtil.postLikeToLeel(id)
+    .then(leel => dispatch(receiveLeel(leel)))
+);
 
-export const unLikeLeel= id=>dispatch=>{
-    return deleteLikeFromLeel(id)
-    .then(leel => dispatch(receiveLeel(leel)));
-};
+export const unLikeLeel= id=>dispatch=>(
+     LeelAPIUtil.deleteLikeFromLeel(id)
+    .then(leel => dispatch(receiveLeel(leel)))
+);

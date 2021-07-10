@@ -5,7 +5,7 @@ class Api::LikesController < ApplicationController
         @like.leel_id = params[:id]
         if @like.save
             @leel = @like.leel
-            render "api/leel_posts/show"
+            render 'api/leel_posts/show'
         else
             render json: @like.errors.full_messages, status: 401
         end
@@ -15,7 +15,8 @@ class Api::LikesController < ApplicationController
         @like= Like.find_by(user_id: current_user.id, leel_id: params[:id])
         @like.destroy
         @leel = @like.leel
-        render "api/leel_posts/show"
+        render 'api/leel_posts/show'
+       
     end
     
 end

@@ -44,11 +44,11 @@ render() {
          
              {this.state.errorMessages.map((error, i) => <div key={i}><p>*{error}</p></div>)}
             <label>
-                <input type="text" placeholder="username" value={this.state.username} onChange={this.handleInput('username')} />
+                <input className="input_login" type="text" placeholder="username" value={this.state.username} onChange={this.handleInput('username')} />
             </label>
             <br></br>
             <label>
-                <input type="password" placeholder="password" value={this.state.password} onChange={this.handleInput('password')} />
+                <input className="input_login" type="password" placeholder="password" value={this.state.password} onChange={this.handleInput('password')} />
             </label>
             <br></br>
             <button id="btn" onClick={this.handleSubmit}>Log in</button>

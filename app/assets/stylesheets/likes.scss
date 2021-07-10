@@ -6,24 +6,39 @@
   border: none;
   background-color:transparent;
   color: red;
+  cursor: pointer;
+  margin-left: 5px;
     // justify-content: right;
 }
 
 
   .like_delete_btn {
 //    justify-content: space-between;
-    margin-left: 424px;
+    margin-left: 435px;
   }
 
      .deletebtn {
     border: none;
     cursor: pointer;
-   color: rgb(80, 79, 79);
+   color: black;
    background-color: transparent;
 //    border-radius: 3px;
    height: auto;
    width: auto;
-   margin-left: 10px;
+   margin-left: 5px;
+  //  border-radius: 5px;
+    
+  }
+
+       .editbtntext {
+    border: none;
+    cursor: pointer;
+   color: black;
+   background-color: transparent;
+//    border-radius: 3px;
+   height: auto;
+   width: auto;
+   margin-left: 5px;
    border-radius: 5px;
     
   }
