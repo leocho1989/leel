@@ -41,17 +41,13 @@ position: relative;
     margin-left: 8px;
   }
 
-    .deletebtn {
-    border: none;
-    
-    cursor: pointer;
-    
-   color: black;
-  }
+ 
+
 
   .vl {
-  border-left: 1px dotted rgba(0,0,0,1);
+  border-left: 1px dashed rgb(145, 144, 144);
   height:60px;
   display: flex;
+  text-align: right;
   
 }
