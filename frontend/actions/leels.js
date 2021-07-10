@@ -43,7 +43,7 @@ export const createLeel = leel => dispatch => (            LeelAPIUtil.createLee
 );
 
 export const updateLeel = leel => dispatch => (
-    LeelAPIUtil.updateLeel(leel).then(leel => dispatch(receiveLeel(leel)))
+    LeelAPIUtil.updateLeel(leel).then(leel => {dispatch(receiveLeel(leel)); dispatch(clearError()); dispatch(fetchLeels());})
 );
 
 export const deleteLeel = leel => dispatch => (

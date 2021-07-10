@@ -4,8 +4,9 @@ import {fetchLeels, fetchLeel, createLeel, updateLeel, deleteLeel, likeLeel, unL
 import { connect } from 'react-redux';
 
 
-const mSTP = state => ({
-    leels:Object.keys(state.leels).map(key => state.leels[key])
+const mSTP = (state, ownProps) => ({
+    leels:Object.keys(state.leels).map(key => state.leels[key]),
+    leel:state.leels[ownProps.match.params.id]
 });
 
 const mDTP = dispatch => (dispatch)=>({

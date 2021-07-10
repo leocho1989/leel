@@ -1,19 +1,68 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Avatar } from 'antd';
 import { UserOutlined, HeartFilled, HeartOutlined, CrownTwoTone } from '@ant-design/icons';
 import { useDispatch, useSelector } from 'react-redux';
-import { deleteLeel,likeLeel, unLikeLeel } from '../../actions/leels';
+import { deleteLeel,likeLeel, unLikeLeel, updateLeel } from '../../actions/leels';
+import { Modal, Button, Input } from 'antd';
 
 
-
-export default ({ leel }) =>{
+export default ( {leel} ) =>{
    const currentUser = useSelector((state) => state.session.currentUser);
-   
+
+   const { TextArea } = Input;
+
+  const [isModalVisible, setIsModalVisible] = useState(false);
+  const [body=leel.body,setBody] = useState();
+
     const dispatch = useDispatch();
     const handleDelete =(e)=>{
         e.preventDefault();
         dispatch(deleteLeel(leel));
     };
+
+     
+
+  const showModal = () => {
+    setIsModalVisible(true);
+  };
+
+  const handleOk = (e) => {
+    e.preventDefault();
+    setIsModalVisible(false);
+
+    const nleel =Object.assign({}, {body,
+    author_id:currentUser.id, id:leel.id} );
+    
+    dispatch(updateLeel(nleel));
+    // .then(setBody(e.currentTarget.value));
+    
+  };
+
+  const handleCancel = () => {
+    setIsModalVisible(false);
+  };
+
+
+const onChange = e => {
+  setBody(e.currentTarget.value);
+    };
+    
+
+
+const edit_button = (currentUser.username===leel.author_username) ? 
+    (<>
+
+  <button className="editbtntext" onClick={showModal} >edit</button>
+<Modal title="Edit leel" visible={isModalVisible} onOk={handleOk} onCancel={handleCancel}>
+ 
+        <TextArea showCount maxLength={240}
+            value={ body }
+            placeholder={leel.body} onChange={onChange} />
+      </Modal>
+  </>
+) : null;
+
+
     const delete_button = (currentUser.username===leel.author_username) ? 
     (<>
 
@@ -43,6 +92,7 @@ export default ({ leel }) =>{
             
             <div className="like_delete_btn" >
             <button className="likebtnheart" onClick={likeButtonAction}>{likeButtonText}</button>
+            {edit_button}
             {delete_button}
             </div>
             </div>
@@ -50,5 +100,4 @@ export default ({ leel }) =>{
         </div>
         </>
     )
-    
 }

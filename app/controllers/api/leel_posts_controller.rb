@@ -9,18 +9,17 @@ class Api::LeelPostsController < ApplicationController
     end
 
     def update
-        @leel = selected_leel
-        if @leel && @leel.update_attributes(leel_params)
-            render :show
-        elsif !@leel
-            render json: ['Could not find Leel'], status: 400
-        else
-            render json: @leel.errors.full_messages, status:401
-        end
+        # @leel = current_user.leel_posts.find(params[:id])
+       @leel = LeelPost.find(params[:id])
+       if @leel.update(leel_params)
+        render json: @leel
+       else
+        render json: @leel.errors.full_messages, status: 422
+       end
     end
 
     def show
-        @leel = selected_leel
+        render json: LeelPost.find(params[:id])
     end
 
     def index
@@ -52,7 +51,4 @@ class Api::LeelPostsController < ApplicationController
         params.permit(:body, :author_id)
     end
 
-    def selected_leel
-        LeelPost.find_by(params[:id])
-    end
 end
