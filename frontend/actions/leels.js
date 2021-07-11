@@ -53,10 +53,10 @@ export const deleteLeel = leel => dispatch => (
 
 export const likeLeel= id=>dispatch=>(
     LeelAPIUtil.postLikeToLeel(id)
-    .then(leel => dispatch(receiveLeel(leel)))
+    .then(leel => dispatch(fetchLeels()))
 );
 
 export const unLikeLeel= id=>dispatch=>(
      LeelAPIUtil.deleteLikeFromLeel(id)
-    .then(leel => dispatch(receiveLeel(leel)))
+    .then(leel => dispatch(fetchLeels()))
 );
