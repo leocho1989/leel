@@ -46,6 +46,13 @@ export default ( {leel, likeLeel, unLikeLeel} ) =>{
 const onChange = e => {
   setBody(e.currentTarget.value);
     };
+
+      let likeButtonText = <HeartOutlined/>;
+    let likeButtonAction = ()=>likeLeel(leel.id);
+    if (leel.liked_by_current_user) {
+        likeButtonText  = <HeartFilled />;
+        likeButtonAction = () =>unLikeLeel(leel.id);
+    }
     
 
 
@@ -70,13 +77,6 @@ const edit_button = (currentUser.username===leel.author_username) ?
   </>
 ) : null;
 
-
-    let likeButtonText = <HeartOutlined/>;
-    let likeButtonAction = ()=>likeLeel(leel.id);
-    if (leel.liked_by_current_user) {
-        likeButtonText  = <HeartFilled />;
-        likeButtonAction = () =>unLikeLeel(leel.id);
-    }
 
     return (
         <>

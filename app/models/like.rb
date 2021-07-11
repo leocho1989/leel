@@ -1,5 +1,5 @@
 class Like < ApplicationRecord
-    validates :user_id, presence: true
+    validates :user_id, presence: true, uniqueness: false
     validates :leel_id, presence: true
 
     belongs_to :leel_post,
