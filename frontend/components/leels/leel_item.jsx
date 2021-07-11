@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Avatar } from 'antd';
-import { UserOutlined, HeartFilled, HeartOutlined, CrownTwoTone, EditOutlined, CloseOutlined } from '@ant-design/icons';
+import { UserOutlined, HeartFilled, HeartOutlined, CrownTwoTone, EditOutlined, CloseOutlined, LikeFilled } from '@ant-design/icons';
 import { useDispatch, useSelector } from 'react-redux';
 import { deleteLeel, updateLeel } from '../../actions/leels';
 import { Modal, Button, Input } from 'antd';
@@ -78,6 +78,7 @@ const edit_button = (currentUser.username===leel.author_username) ?
 ) : null;
 
 
+
     return (
         <>
         <div className="leel_row">
@@ -87,15 +88,20 @@ const edit_button = (currentUser.username===leel.author_username) ?
         <li className="leels_show">
             <div className="post">
             
-            <p className="author"> <CrownTwoTone />&nbsp;{leel.author_username}</p>
+            <p className="author"> <CrownTwoTone />&nbsp;{leel.author_username} &nbsp;&nbsp;&nbsp;&nbsp;
+           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            {edit_button}
+            {delete_button}</p>
             <h3 className="body_post" >{leel.body}</h3>
             
-            <div className="like_delete_btn" >
-              {edit_button}
-            {delete_button}
+            <div className="like_count"><LikeFilled /> Likes: {leel.likes}
+            &nbsp;&nbsp;&nbsp;&nbsp;
+           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            
             <button className="likebtnheart" onClick={likeButtonAction}>{likeButtonText}</button>
             
-            </div>
+           </div>
+    
             </div>
         </li>
         </div>

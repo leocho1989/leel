@@ -12,11 +12,6 @@
 }
 
 
-  .like_delete_btn {
-//    justify-content: space-between;
-    margin-left: 435px;
-  }
-
      .deletebtn {
     border: none;
     cursor: pointer;
@@ -26,7 +21,7 @@
    height: auto;
    width: auto;
    margin-left: 5px;
-  //  border-radius: 5px;
+ 
     
   }
 
@@ -35,10 +30,16 @@
     cursor: pointer;
    color: black;
    background-color: transparent;
-//    border-radius: 3px;
    height: auto;
    width: auto;
    margin-left: 5px;
-   border-radius: 5px;
+
     
   }
+
+  .like_count {
+     color: black;
+   
+  }
+
+ 
