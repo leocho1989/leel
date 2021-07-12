@@ -10,8 +10,8 @@ export default ()=> {
 
   const [isModalVisible, setIsModalVisible] = useState(false);
   const [body,setBody] = useState("");
-  const [photoFile, setPhotoFile] = useState(null);
-  const [photoUrl,setPhotoUrl] = useState(null);
+  const [photoFiles, setPhotoFiles] = useState(null);
+  const [photoUrls,setPhotoUrls] = useState(null);
   const [photos, setPhotos] = useState(null);
   
   
@@ -34,17 +34,17 @@ export default ()=> {
 
   formData.append('body', body);
   formData.append('author_id', currentUser.id);
-  if (photoFile) {
+  if (photoFiles) {
 
     for (let i = 0; i <photos.length; i++) {
-      formData.append('photos[]', photoFile[i]);
+      formData.append('photos[]', photoFiles[i]);
     }
 
     // formData.append('photos', photoFile);
   } 
     
    dispatch(photoLeel(formData))
-   .then(setBody("")).then(setPhotoFile(null));
+   .then(setBody("")).then(setPhotoFiles(null));
    };
 
   const handleCancel = () => {
@@ -63,19 +63,19 @@ export default ()=> {
       const file=e.currentTarget.files[0];
       const fileReader = new FileReader();
       fileReader.onloadend=()=>{
-      setPhotoFile(file);
-      setPhotoUrl(fileReader.result);
+      setPhotoFiles(file);
+      setPhotoUrls(fileReader.result);
       };
       if (file) {
       fileReader.readAsDataURL(file);
       } else {
-        setPhotoUrl("");
-        setPhotoFile(null);
+        setPhotoUrls("");
+        setPhotoFiles(null);
         }
       };
 
 
-    const preview = photoUrl ? <img src={photoUrl} /> : null;
+    const preview = photoUrls ? <img src={photoUrls} /> : null;
     
 
 

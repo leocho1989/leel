@@ -48,7 +48,7 @@ class Api::LeelPostsController < ApplicationController
     private
     
     def leel_params
-        params.permit(:body, :author_id, photos: [])
+        params.permit(:body, :author_id, photos:[])
         
     end
 

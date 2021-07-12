@@ -20,7 +20,7 @@ class LeelPost < ApplicationRecord
 
     def ensure_photo
         unless self.photo.attached?
-            errors[:photo] << "Photo must be attached"
+            errors[:photos] << "Photo must be attached"
         end
     
     end
