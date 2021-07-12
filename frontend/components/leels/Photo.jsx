@@ -34,14 +34,20 @@ export default ()=> {
 
   formData.append('body', body);
   formData.append('author_id', currentUser.id);
-  if (photoFiles) {
+
+  console.log(photos);
+  // console.log(photoFiles);
+  if (photos) {
 
     for (let i = 0; i <photos.length; i++) {
-      formData.append('photos[]', photoFiles[i]);
+      formData.append('photos[i]', photos[i]);
     }
 
     // formData.append('photos', photoFile);
   } 
+  console.log(photoUrls);
+  // console.log(formData);
+  
     
    dispatch(photoLeel(formData))
    .then(setBody("")).then(setPhotoFiles(null));

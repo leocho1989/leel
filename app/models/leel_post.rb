@@ -1,6 +1,6 @@
 class LeelPost < ApplicationRecord
     validates :body, presence: true, length: { maximum: 240 }
-    # validate :ensure_photo
+    # validate :ensure_photos
 
     has_many :likes,
         primary_key: :id,
@@ -18,8 +18,8 @@ class LeelPost < ApplicationRecord
 
     has_many_attached :photos
 
-    def ensure_photo
-        unless self.photo.attached?
+    def ensure_photos
+        unless self.photos.attached?
             errors[:photos] << "Photo must be attached"
         end
     
