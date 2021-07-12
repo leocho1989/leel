@@ -10,7 +10,7 @@ export default ()=> {
 
   const [isModalVisible, setIsModalVisible] = useState(false);
   const [body,setBody] = useState("");
-  const [photoFile, setPhotoFile] = useState(null);
+  const [photoFiles, setPhotoFiles] = useState(null);
   const [photoUrl,setPhotoUrl] = useState(null);
   
   
@@ -33,13 +33,17 @@ export default ()=> {
 
   formData.append('body', body);
   formData.append('author_id', currentUser.id);
-  if (photoFile) {
+  if (photoFiles) {
 
-    formData.append('photo', photoFile);
+    for (let i = 0; i <photoFiles.length; i++) {
+      formData.append('photos[]', photoFiles[i]);
+    }
+
+    // formData.append('photos', photoFile);
   } 
     
    dispatch(photoLeel(formData))
-   .then(setBody("")).then(setPhotoFile(""));
+   .then(setBody("")).then(setPhotoFiles(null));
    };
 
   const handleCancel = () => {
@@ -53,17 +57,17 @@ export default ()=> {
 
     const handleFile = e=>{
       
-      const file=e.currentTarget.files[0];
+      const files=e.currentTarget.files;
       const fileReader = new FileReader();
       fileReader.onloadend=()=>{
-      setPhotoFile(file);
+      setPhotoFiles(files);
       setPhotoUrl(fileReader.result);
       };
-      if (file) {
-      fileReader.readAsDataURL(file);
+      if (files) {
+      fileReader.readAsDataURL(files);
       } else {
         setPhotoUrl("");
-        setPhotoFile(null);
+        setPhotoFiles(null);
         }
       };
 
@@ -76,7 +80,7 @@ return (
 
     <div className="postbtn"><img src={window.cameraURL} onClick={showModal} /><button className="textbtn" onClick={showModal} >Photo</button>
 <Modal title="Share photos" visible={isModalVisible} onOk={handleOk} onCancel={handleCancel}>
-  <input type="file" onChange={handleFile} />
+  <input type="file" onChange={handleFile} multiple={true} />
 <h3>Image preview</h3>
 {preview}
         <TextArea showCount maxLength={240}
