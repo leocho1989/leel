@@ -53,7 +53,7 @@ export default ()=> {
   
     
    dispatch(photoLeel(formData))
-   .then(setBody("")).then(setPhotoFiles(null));
+   .then(setBody("")).then(setPhotoUrls([]));
    };
 
   const handleCancel = () => {
@@ -87,7 +87,7 @@ return (
 
     <div className="postbtn"><img id="small_pic" src={window.cameraURL} onClick={showModal} /><button className="textbtn" onClick={showModal} >Photo</button>
 <Modal title="Share photos" visible={isModalVisible} onOk={handleOk} onCancel={handleCancel}>
-  <input type="file" onChange={handleFile} multiple={true} />
+  <input type="file" onChange={handleFile} multiple={true} key={Date.now()} />
 <h3>Image preview</h3>
 {preview}
         <TextArea showCount maxLength={240}
