@@ -42,6 +42,10 @@ export const createLeel = leel => dispatch => (            LeelAPIUtil.createLee
     .then(leel => {dispatch(receiveLeel(leel)); dispatch(clearError()); dispatch(fetchLeels());}, error => dispatch(receiveError(error.responseJSON)))
 );
 
+export const photoLeel = leel => dispatch => (            LeelAPIUtil.photoLeel(leel)
+    .then(leel => {dispatch(receiveLeel(leel)); dispatch(clearError()); dispatch(fetchLeels());}, error => dispatch(receiveError(error.responseJSON)))
+);
+
 export const updateLeel = leel => dispatch => (
     LeelAPIUtil.updateLeel(leel).then(leel => {dispatch(receiveLeel(leel)); dispatch(clearError()); dispatch(fetchLeels());})
 );

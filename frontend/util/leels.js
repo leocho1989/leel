@@ -12,6 +12,14 @@ export const createLeel = (leel)=>$.ajax({
     data: leel
 });
 
+export const photoLeel = (leel)=>$.ajax({
+    url: "/api/leel_posts",
+    method: "POST",
+    data: leel,
+    contentType:false,
+    processData:false
+});
+
 export const updateLeel = (leel)=>$.ajax({
     method:'PATCH',
     url: `/api/leel_posts/${leel.id}`,
