@@ -77,6 +77,10 @@ const edit_button = (currentUser.username===leel.author_username) ?
   </>
 ) : null;
 
+const postPhoto = (leel.photoUrl) ? (<img src={leel.photoUrl} />) : null;
+
+
+
 
 
     return (
@@ -95,6 +99,7 @@ const edit_button = (currentUser.username===leel.author_username) ?
             {delete_button}</p>
             </div>
             <h3 className="body_post" >{leel.body}</h3>
+            <div className="post_photo">{postPhoto}</div>
             
             <div className="like_count">
               <p className="second_left"><LikeFilled />  {leel.likes}</p>
