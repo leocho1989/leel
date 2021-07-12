@@ -8,20 +8,20 @@ local:
 
 
 
-# amazon_dev:
-#   service: S3
-#   access_key_id: <%= Rails.application.credentials.aws[:access_key_id] %>
-#   secret_access_key:
-#     <%= Rails.application.credentials.aws[:secret_access_key] %>
-#   region: <%= Rails.application.credentials.aws[:region] %>
-#   bucket: <%= Rails.application.credentials.aws[:dev][:bucket] %>
+amazon_dev:
+  service: S3
+  access_key_id: <%= env['AKIAZXO3UUFVP62IZ7OQ'] %>
+  secret_access_key:
+    <%= env['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'] %>
+  region: us-west-1
+  bucket: <%= env['app-leel-dev'] %>
 
-# amazon_prod:
-#   service: S3
-#   access_key_id: <%= Rails.application.credentials.aws[:access_key_id] %>
-#   secret_access_key:
-#     <%= Rails.application.credentials.aws[:secret_access_key] %>
-#   region: <%= Rails.application.credentials.aws[:region] %>
-#   bucket: <%= Rails.application.credentials.aws[:prod][:bucket] %>
+amazon_prod:
+  service: S3
+  access_key_id: <%= env['AKIAZXO3UUFVP62IZ7OQ'] %>
+  secret_access_key:
+    <%= env['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'] %>
+  region: us-west-1
+  bucket: <%= env['app-leel-pro'] %>
 
 
