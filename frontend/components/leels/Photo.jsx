@@ -11,7 +11,9 @@ export default ()=> {
   const [isModalVisible, setIsModalVisible] = useState(false);
   const [body,setBody] = useState("");
   const [photoFiles, setPhotoFiles] = useState(null);
-  const [photoUrls,setPhotoUrls] = useState(null);
+  const [photoUrls,setPhotoUrls] = useState([]);
+
+
   const [photos, setPhotos] = useState(null);
   
   
@@ -58,6 +60,7 @@ export default ()=> {
     setIsModalVisible(false);
   };
 
+
   const onChange = e => {
 
    setBody(e.target.value);
@@ -65,24 +68,18 @@ export default ()=> {
 
     const handleFile = e=>{
 
-      setPhotos(e.target.files);
+      setPhotos(e.currentTarget.files);
       
-      const file=e.currentTarget.files[0];
-      const fileReader = new FileReader();
-      fileReader.onloadend=()=>{
-      setPhotoFiles(file);
-      setPhotoUrls(fileReader.result);
-      };
-      if (file) {
-      fileReader.readAsDataURL(file);
-      } else {
-        setPhotoUrls("");
-        setPhotoFiles(null);
-        }
+
+      for (let i=0; i < e.currentTarget.files.length; i++) {
+        photoUrls.push(URL.createObjectURL(e.currentTarget.files[i]));
+      }
+      setPhotoFiles(e.currentTarget.files);
+      
       };
 
 
-    const preview = photoUrls ? <img id="preview_pic" src={photoUrls} /> : null;
+    const preview = (photoUrls.length > 0)? (photoUrls.map(photoUrl=>(<img id="preview_pic" src={photoUrl} key={photoUrl} />))) : null;
     
 
 
