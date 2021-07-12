@@ -80,7 +80,9 @@ export default ()=> {
         setPhotoFiles(null);
         }
       };
-const preview = photoUrls ? <img src={photoUrls} /> : null;
+
+
+    const preview = photoUrls ? <img src={photoUrls} /> : null;
     
 
 
