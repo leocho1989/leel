@@ -44,7 +44,7 @@ export default ()=> {
   } 
     
    dispatch(photoLeel(formData))
-   .then(setBody("")).then(setPhotoFiles(null));
+   .then(setBody("")).then(setPhotoFile(null));
    };
 
   const handleCancel = () => {
