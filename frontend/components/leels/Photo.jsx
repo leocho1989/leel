@@ -35,18 +35,19 @@ export default ()=> {
   formData.append('body', body);
   formData.append('author_id', currentUser.id);
 
-  console.log(photos);
+  // console.log(photos);
   // console.log(photoFiles);
   if (photos) {
 
     for (let i = 0; i <photos.length; i++) {
-      formData.append('photos[i]', photos[i]);
+      formData.append('photos[]', photos[i]);
+      // console.log(formData);
     }
-
+  }
     // formData.append('photos', photoFile);
-  } 
-  console.log(photoUrls);
-  // console.log(formData);
+  
+  
+  
   
     
    dispatch(photoLeel(formData))
@@ -79,9 +80,7 @@ export default ()=> {
         setPhotoFiles(null);
         }
       };
-
-
-    const preview = photoUrls ? <img src={photoUrls} /> : null;
+const preview = photoUrls ? <img src={photoUrls} /> : null;
     
 
 
