@@ -20,13 +20,20 @@ export const photoLeel = (leel)=>$.ajax({
     processData:false
 });
 
-export const updateLeel = (leel)=>$.ajax({
+export const updateLeel = leel=>$.ajax({
     method:'PATCH',
     url: `/api/leel_posts/${leel.id}`,
     data: leel
      });
-    
 
+  export const updateLeelPhoto = (formData)=>$.ajax({
+    method: "PATCH",
+    url: `/api/leel_posts/${formData.get('id')}`,
+    data: formData,
+    contentType:false,
+    processData:false   
+    
+});
     
 export const deleteLeel =leel=>$.ajax({
     method:'DELETE',

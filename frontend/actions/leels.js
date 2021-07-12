@@ -50,6 +50,10 @@ export const updateLeel = leel => dispatch => (
     LeelAPIUtil.updateLeel(leel).then(leel => {dispatch(receiveLeel(leel)); dispatch(clearError()); dispatch(fetchLeels());})
 );
 
+export const updateLeelPhoto = leel => dispatch => (
+    LeelAPIUtil.updateLeelPhoto(leel).then(leel => {dispatch(receiveLeel(leel)); dispatch(clearError()); dispatch(fetchLeels());})
+);
+
 export const deleteLeel = leel => dispatch => (
     LeelAPIUtil.deleteLeel(leel).then(leel=> {dispatch(removeLeel(leel));dispatch(fetchLeels());})
 );

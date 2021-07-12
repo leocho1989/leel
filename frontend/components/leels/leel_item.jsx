@@ -4,6 +4,7 @@ import { UserOutlined, HeartFilled, HeartOutlined, CrownTwoTone, EditOutlined, C
 import { useDispatch, useSelector } from 'react-redux';
 import { deleteLeel, updateLeel } from '../../actions/leels';
 import { Modal, Button, Input } from 'antd';
+import PhotoEdit from './PhotoEdit';
 
 
 export default ( {leel, likeLeel, unLikeLeel} ) =>{
@@ -58,14 +59,17 @@ const onChange = e => {
 
 const edit_button = (currentUser.username===leel.author_username) ? 
     (<>
-
+{ (leel.photoUrls) ? (<PhotoEdit key={`leel${leel.id}`} leel = {leel} />):(
+  <>
   <button className="editbtntext" onClick={showModal} ><EditOutlined /></button>
 <Modal title="Edit leel" visible={isModalVisible} onOk={handleOk} onCancel={handleCancel}>
- 
-        <TextArea showCount maxLength={240}
+     
+       <TextArea showCount maxLength={240}
             value={ body }
             placeholder={leel.body} onChange={onChange} />
       </Modal>
+      </>
+      )}
   </>
 ) : null;
 

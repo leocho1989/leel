@@ -1,19 +1,18 @@
 import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Modal, Button, Input } from 'antd';
-import {photoLeel} from '../../actions/leels';
+import { updateLeelPhoto} from '../../actions/leels';
+import { EditOutlined } from '@ant-design/icons';
 
 
 
-export default ()=> {
+export default ({leel})=> {
   const { TextArea } = Input;
 
   const [isModalVisible, setIsModalVisible] = useState(false);
   const [body,setBody] = useState("");
   const [photoFiles, setPhotoFiles] = useState(null);
-  const [photoUrls,setPhotoUrls] = useState([]);
-
-
+  const [photoAdds,setPhotoAdds] = useState(leel.photoUrls);
   const [photos, setPhotos] = useState(null);
   
   
@@ -23,8 +22,6 @@ export default ()=> {
   const currentUser = useSelector((state) => state.session.currentUser);
 
 
- 
-
   const showModal = () => {
     setIsModalVisible(true);
   };
@@ -32,13 +29,16 @@ export default ()=> {
   const handleOk = (e) => {
     e.preventDefault();
     setIsModalVisible(false);
+
     const formData = new FormData();
+ 
 
   formData.append('body', body);
   formData.append('author_id', currentUser.id);
+  formData.append('id',leel.id);
+ 
 
-  
-  if (photos) {
+ if (photos) {
 
     for (let i = 0; i <photos.length; i++) {
       formData.append('photos[]', photos[i]);
@@ -46,10 +46,11 @@ export default ()=> {
     }
   }
 
-    
-    
-   dispatch(photoLeel(formData))
-   .then(setBody("")).then(setPhotoUrls([]));
+  console.log(formData.get('id'));
+
+
+   dispatch(updateLeelPhoto(formData))
+   .then(setBody("")).then(setPhotoAdds([]));
    };
 
   const handleCancel = () => {
@@ -58,7 +59,7 @@ export default ()=> {
 
 
   const onChange = e => {
-
+    leel.body = e.target.value;
    setBody(e.target.value);
     };
 
@@ -68,29 +69,32 @@ export default ()=> {
       
 
       for (let i=0; i < e.currentTarget.files.length; i++) {
-        photoUrls.push(URL.createObjectURL(e.currentTarget.files[i]));
+        photoAdds.push(URL.createObjectURL(e.currentTarget.files[i]));
       }
       setPhotoFiles(e.currentTarget.files);
       
       };
 
 
-    const preview = (photoUrls.length > 0)? (photoUrls.map(photoUrl=>(<img id="preview_pic" src={photoUrl} key={photoUrl} />))) : null;
-    
+    const preview = (leel.photoUrls.length > 0)? 
+      (leel.photoUrls.map(photoUrl=>(<img id="preview_pic" src={photoUrl} key={photoUrl} />))) : null;
 
 
 return (
 
-    <div className="postbtn"><img id="small_pic" src={window.cameraURL} onClick={showModal} /><button className="textbtn" onClick={showModal} >Photo</button>
-<Modal title="Share photos" visible={isModalVisible} onOk={handleOk} onCancel={handleCancel}>
-  <input type="file" onChange={handleFile} multiple={true} key={Date.now()} />
-<h3>Image preview</h3>
-{preview}
-        <TextArea showCount maxLength={240}
-            value={ body }
-            placeholder="add description for your photos" onChange={onChange} />
+    <>
+  <button className="editbtntext" onClick={showModal} ><EditOutlined /></button>
+<Modal title="Edit photos" visible={isModalVisible} onOk={handleOk} onCancel={handleCancel}>
+   <input type="file" onChange={handleFile} multiple={true} key={Date.now()} />
+     <h3>Image preview</h3>
+ {preview}
+       <TextArea showCount maxLength={240}
+            value={ leel.body }
+            placeholder={leel.body} onChange={onChange} />
       </Modal>
-</div>
+      </>
 
+//    
 
 )};
+
