@@ -8,20 +8,3 @@ local:
 
 
 
-amazon_dev:
-  service: S3
-  access_key_id: <%= env['AKIAZXO3UUFVP62IZ7OQ'] %>
-  secret_access_key:
-    <%= env['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'] %>
-  region: us-west-1
-  bucket: <%= env['app-leel-dev'] %>
-
-amazon_prod:
-  service: S3
-  access_key_id: <%= env['AKIAZXO3UUFVP62IZ7OQ'] %>
-  secret_access_key:
-    <%= env['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'] %>
-  region: us-west-1
-  bucket: <%= env['app-leel-pro'] %>
-
-
