@@ -10,8 +10,9 @@ export default ()=> {
 
   const [isModalVisible, setIsModalVisible] = useState(false);
   const [body,setBody] = useState("");
-  const [photoFiles, setPhotoFiles] = useState(null);
+  const [photoFile, setPhotoFile] = useState(null);
   const [photoUrl,setPhotoUrl] = useState(null);
+  const [photos, setPhotos] = useState(null);
   
   
 
@@ -33,10 +34,10 @@ export default ()=> {
 
   formData.append('body', body);
   formData.append('author_id', currentUser.id);
-  if (photoFiles) {
+  if (photoFile) {
 
-    for (let i = 0; i <photoFiles.length; i++) {
-      formData.append('photos[]', photoFiles[i]);
+    for (let i = 0; i <photos.length; i++) {
+      formData.append('photos[]', photoFile[i]);
     }
 
     // formData.append('photos', photoFile);
@@ -56,18 +57,20 @@ export default ()=> {
     };
 
     const handleFile = e=>{
+
+      setPhotos(e.target.files);
       
-      const files=e.currentTarget.files;
+      const file=e.currentTarget.files[0];
       const fileReader = new FileReader();
       fileReader.onloadend=()=>{
-      setPhotoFiles(files);
+      setPhotoFile(file);
       setPhotoUrl(fileReader.result);
       };
-      if (files) {
-      fileReader.readAsDataURL(files);
+      if (file) {
+      fileReader.readAsDataURL(file);
       } else {
         setPhotoUrl("");
-        setPhotoFiles(null);
+        setPhotoFile(null);
         }
       };
 
