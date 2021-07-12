@@ -49,7 +49,7 @@ export default ()=> {
 
 return (
 
-    <div className="postbtn"><img src={window.httpURL} onClick={showModal} /><button className="textbtn" onClick={showModal} >&nbsp;Link</button>
+    <div className="postbtn"><img id="small_pic" src={window.httpURL} onClick={showModal} /><button className="textbtn" onClick={showModal} >&nbsp;Link</button>
 <Modal title="Share a Link" visible={isModalVisible} onOk={handleOk} onCancel={handleCancel}>
  
         <TextArea showCount maxLength={150}

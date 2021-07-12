@@ -25,7 +25,7 @@ class LeelIndex extends React.Component {
             <div className="leels">
                 <div className="leel_row">
     <div className="avatar_post">
-        <img src={window.avatarURL} />
+        <img id="small_pic" src={window.avatarURL} />
     </div>
                 
                 <div className="new_post"><NewPost />

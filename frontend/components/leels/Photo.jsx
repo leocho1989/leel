@@ -82,13 +82,13 @@ export default ()=> {
       };
 
 
-    const preview = photoUrls ? <img src={photoUrls} /> : null;
+    const preview = photoUrls ? <img id="preview_pic" src={photoUrls} /> : null;
     
 
 
 return (
 
-    <div className="postbtn"><img src={window.cameraURL} onClick={showModal} /><button className="textbtn" onClick={showModal} >Photo</button>
+    <div className="postbtn"><img id="small_pic" src={window.cameraURL} onClick={showModal} /><button className="textbtn" onClick={showModal} >Photo</button>
 <Modal title="Share photos" visible={isModalVisible} onOk={handleOk} onCancel={handleCancel}>
   <input type="file" onChange={handleFile} multiple={true} />
 <h3>Image preview</h3>

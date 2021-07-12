@@ -24,13 +24,13 @@ position: relative;
     justify-content: space-between;
     // display: flex;
 }
-  img {
+  #small_pic {
     width: 50px;
     height: 52px;
     cursor: pointer;
   }
 
-  img:hover{
+  #small_pic:hover{
    transform: translate( -3%, 3%) scale3d(1.1, 1.1, 1);
  
 }

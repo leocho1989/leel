@@ -48,7 +48,7 @@ export default ()=> {
 
 return (
 
-    <div className="postbtn"><img src={window.quotationURL} onClick={showModal} /><button className="textbtn" onClick={showModal} >Quote</button>
+    <div className="postbtn"><img id="small_pic" src={window.quotationURL} onClick={showModal} /><button className="textbtn" onClick={showModal} >Quote</button>
 <Modal title="A quote for today" visible={isModalVisible} onOk={handleOk} onCancel={handleCancel}>
  
         <TextArea showCount maxLength={150}

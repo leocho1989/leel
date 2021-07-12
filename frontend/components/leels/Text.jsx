@@ -48,7 +48,7 @@ export default ()=> {
 
 return (
 
-    <div className="postbtn"><img src={window.textURL} onClick={showModal} /><button className="textbtn" onClick={showModal} >Text</button>
+    <div className="postbtn"><img id="small_pic" src={window.textURL} onClick={showModal} /><button className="textbtn" onClick={showModal} >Text</button>
 <Modal title="New leel" visible={isModalVisible} onOk={handleOk} onCancel={handleCancel}>
  
         <TextArea showCount maxLength={240}
