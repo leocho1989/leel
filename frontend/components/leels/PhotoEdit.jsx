@@ -88,9 +88,9 @@ export default ({leel})=> {
 
 
     const preview = (leel.photoUrls.length > 0)? 
-      (leel.photoUrls.map((photoUrl,index)=>(<>
-      <p><img id="preview_pic" src={photoUrl} key={index} /> <button className="delete_photo" key={photoUrl} onClick={()=>handleDelete(index)}><MinusCircleFilled /></button></p>
-      </> ))) : null;
+      (leel.photoUrls.map((photoUrl,index)=>(<div key={index}>
+      <p ><img id="preview_pic" src={photoUrl} /> <button className="delete_photo" key={photoUrl} onClick={()=>handleDelete(index)}><MinusCircleFilled /></button></p>
+      </div> ))) : null;
 
 
 return (

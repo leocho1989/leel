@@ -52,9 +52,9 @@ return (
     <div className="postbtn"><img id="small_pic" src={window.httpURL} onClick={showModal} /><button className="textbtn" onClick={showModal} >&nbsp;Link</button>
 <Modal title="Share a Link" visible={isModalVisible} onOk={handleOk} onCancel={handleCancel}>
  
-        <TextArea showCount maxLength={150}
+        <Input type="url" showCount maxLength={150}
             value={ body }
-            placeholder="Put the link you want to share...                                                                    Please add description below..." onChange={onChange} />
+            placeholder="Put the link you want to share..." onChange={onChange} />
       </Modal>
 </div>
 
