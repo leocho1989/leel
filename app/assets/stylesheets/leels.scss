@@ -11,16 +11,19 @@
 }
 
 .leels {
+ 
     grid-area: content;
     opacity: 0;
     transform: translate3d(0, 500px, 0);
     animation: arrive 500ms ease-in-out 0.9s forwards;
-    width: 600px;
+    width: 100%;
     margin-left: auto;
     margin-right: auto;
     overflow:auto;
      -ms-overflow-style: none; 
   scrollbar-width: none;
+ 
+  text-align: center;
 }
 
 .leels_show {
@@ -187,7 +190,15 @@ width: 70px;
   
 }
 
-
+.title_post {
+  color:rgb(8, 8, 8);
+    font-size: 14pt;
+    text-decoration: bold;
+   font-family: 'Libre Baskerville', serif;
+    text-align: left;
+    width: 500px;
+    margin-top: 5px;
+}
 
 
 

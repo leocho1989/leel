@@ -14,6 +14,7 @@ export default ( {leel, likeLeel, unLikeLeel} ) =>{
 
   const [isModalVisible, setIsModalVisible] = useState(false);
   const [body=leel.body,setBody] = useState();
+  const [title=leel.title, setTitle] = useState();
 
     const dispatch = useDispatch();
     const handleDelete =(e)=>{
@@ -31,7 +32,7 @@ export default ( {leel, likeLeel, unLikeLeel} ) =>{
     e.preventDefault();
     setIsModalVisible(false);
 
-    const nleel =Object.assign({}, {body,
+    const nleel =Object.assign({}, {body, title,
     author_id:currentUser.id, id:leel.id} );
     
     dispatch(updateLeel(nleel));
@@ -44,8 +45,16 @@ export default ( {leel, likeLeel, unLikeLeel} ) =>{
   };
 
 
-const onChange = e => {
-  setBody(e.currentTarget.value);
+  const onChangeT = e => {
+
+   
+   setTitle(e.target.value);
+    };
+
+    const onChangeB = e => {
+
+   setBody(e.target.value);
+   
     };
 
       let likeButtonText = <HeartOutlined/>;
@@ -63,10 +72,16 @@ const edit_button = (currentUser.username===leel.author_username) ?
   <>
   <button className="editbtntext" onClick={showModal} ><EditOutlined /></button>
 <Modal title="Edit leel" visible={isModalVisible} onOk={handleOk} onCancel={handleCancel}>
+  <Input 
+        value={title}
+        placeholder="Title(optional)" 
+        onChange={onChangeT}/>
      
        <TextArea showCount maxLength={240}
             value={ body }
-            placeholder={leel.body} onChange={onChange} />
+            placeholder={leel.body} onChange={onChangeB}
+            autoSize={{ minRows: 5, maxRows: 6 }} />
+            
       </Modal>
       </>
       )}
@@ -102,6 +117,7 @@ const postPhoto = (leel.photoUrls) ? (leel.photoUrls.map((photoUrl, index) => (<
             <p className="edit_right">{edit_button}
             {delete_button}</p>
             </div>
+            <h3 className="title_post" >{leel.title}</h3>
             <h3 className="body_post" >{leel.body}</h3>
             <div className="post_photo">{postPhoto}</div>
             

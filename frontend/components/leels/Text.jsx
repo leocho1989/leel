@@ -10,6 +10,8 @@ export default ()=> {
 
   const [isModalVisible, setIsModalVisible] = useState(false);
   const [body,setBody] = useState("");
+  const [title, setTitle] = useState("");
+  
 
   const dispatch = useDispatch();
 
@@ -28,10 +30,10 @@ export default ()=> {
 
     
 
-    const leel =Object.assign({}, {body,
+    const leel =Object.assign({}, {body, title,
     author_id:currentUser.id} );
     
-    dispatch(createLeel(leel)).then(setBody(""));
+    dispatch(createLeel(leel)).then(setBody("")).then(setTitle(""));
     
   };
 
@@ -39,9 +41,16 @@ export default ()=> {
     setIsModalVisible(false);
   };
 
-  const onChange = e => {
+  const onChangeT = e => {
+
+   
+   setTitle(e.target.value);
+    };
+
+    const onChangeB = e => {
 
    setBody(e.target.value);
+   
     };
 
 
@@ -50,11 +59,14 @@ return (
 
     <div className="postbtn"><img id="small_pic" src={window.textURL} onClick={showModal} /><button className="textbtn" onClick={showModal} >Text</button>
 <Modal title="New leel" visible={isModalVisible} onOk={handleOk} onCancel={handleCancel}>
- 
+        <Input 
+        value={title}
+        placeholder="Title(optional)" 
+        onChange={onChangeT}/>
         < TextArea className="text_area"
          showCount maxLength={240}
             value={ body }
-            placeholder="Go ahead, put anything" onChange={onChange}
+            placeholder="Go ahead, put anything" onChange={onChangeB}
             autoSize={{ minRows: 5, maxRows: 6 }} />
       </Modal>
 </div>

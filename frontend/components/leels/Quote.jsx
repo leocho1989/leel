@@ -10,7 +10,7 @@ export default ()=> {
 
   const [isModalVisible, setIsModalVisible] = useState(false);
   const [body,setBody] = useState("");
-
+const [title, setTitle] = useState("");
   const dispatch = useDispatch();
 
   const currentUser = useSelector((state) => state.session.currentUser);
@@ -28,32 +28,41 @@ export default ()=> {
 
     
 
-    const leel =Object.assign({}, {body,
+    const leel =Object.assign({}, {body, title,
     author_id:currentUser.id} );
     
-    dispatch(createLeel(leel)).then(setBody(""));
+    dispatch(createLeel(leel)).then(setBody("")).then(setTitle(""));
     
   };
-
   const handleCancel = () => {
     setIsModalVisible(false);
   };
 
-  const onChange = e => {
+ const onChangeT = e => {
 
-   setBody(e.target.value);
+   
+   setTitle(e.target.value);
     };
 
+    const onChangeB = e => {
+
+   setBody(e.target.value);
+   
+    };
 
 
 return (
 
     <div className="postbtn"><img id="small_pic" src={window.quotationURL} onClick={showModal} /><button className="textbtn" onClick={showModal} >Quote</button>
 <Modal title="A quote for today" visible={isModalVisible} onOk={handleOk} onCancel={handleCancel}>
- 
-        <TextArea showCount maxLength={100}
+ <Input 
+        value={title}
+        placeholder="Quote here" 
+        onChange={onChangeT}/>
+        <TextArea 
+        showCount maxLength={100}
             value={ body }
-            placeholder="Deliver a quote...                                                                                                Please add source below..." onChange={onChange}
+            placeholder="- Source" onChange={onChangeB}
             autoSize={{ minRows: 1, maxRows: 2 }} />
       </Modal>
 </div>
