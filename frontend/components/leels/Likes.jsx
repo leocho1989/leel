@@ -13,17 +13,19 @@ export default()=> {
 
     const leels = Object.keys(leelsOb).map(key=>leelsOb[key]);
 
-    console.log(leels);
+  
 
     const liked = leels.filter(leel => leel.liked_by_current_user===true);
 
-    console.log(liked);
-
-    // const liked_leel = (leel.liked_by_current_user) ? (<LeelItem
-    // key={`leel${leel.id}`}
-    // leel = {leel}
-    // likeLeel = {likeLeel}
-    // unLikeLeel = {unLikeLeel} />) : null;
+   
+const display = (liked.length > 0) ? (liked.reverse().map(leel=>(
+                    <LeelItem
+                        key={`leel${leel.id}`}
+                        leel = {leel}
+                         likeLeel = {likeLeel}
+                         unLikeLeel = {unLikeLeel} />
+                         
+                )) ) : (<div className="nolikes"><p>No likes yet!!</p></div>);
 
         return (
     
@@ -35,14 +37,7 @@ export default()=> {
                 
                 <ul>
 
-            {liked.reverse().map(leel=>(
-                    <LeelItem
-                        key={`leel${leel.id}`}
-                        leel = {leel}
-                         likeLeel = {likeLeel}
-                         unLikeLeel = {unLikeLeel} />
-                         
-                )) 
+            {display
                 }
                 </ul>
             </div>

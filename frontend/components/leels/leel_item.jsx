@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Avatar } from 'antd';
 import { UserOutlined, HeartFilled, HeartOutlined, CrownTwoTone, EditOutlined, CloseOutlined, LikeFilled } from '@ant-design/icons';
 import { useDispatch, useSelector } from 'react-redux';
-import { deleteLeel, updateLeel } from '../../actions/leels';
+import { deleteLeel, updateLeel  } from '../../actions/leels';
 import { Modal, Button, Input } from 'antd';
 import PhotoEdit from './PhotoEdit';
 
