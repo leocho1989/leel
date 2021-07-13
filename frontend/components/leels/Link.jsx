@@ -52,7 +52,9 @@ return (
     <div className="postbtn"><img id="small_pic" src={window.httpURL} onClick={showModal} /><button className="textbtn" onClick={showModal} >&nbsp;Link</button>
 <Modal title="Share a Link" visible={isModalVisible} onOk={handleOk} onCancel={handleCancel}>
  
-        <Input type="url" showCount maxLength={150}
+        <input showCount maxLength={150} 
+        className="link_input" 
+        type="url" 
             value={ body }
             placeholder="Put the link you want to share..." onChange={onChange} />
       </Modal>

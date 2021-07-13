@@ -15,9 +15,9 @@ export default ({currentUser, logout, ...props}) =>{
         <UnorderedListOutlined /> My leels
       </a>
     </Menu.Item >
-    <Menu.Item key="2" disabled>
-      <a href="/">
-        <HeartOutlined /> Likes (disabled)
+    <Menu.Item key="2">
+      <a href={`/#/likes`}>
+        <HeartOutlined /> Likes
       </a>
     </Menu.Item >
     

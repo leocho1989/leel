@@ -1,7 +1,6 @@
 import React from 'react';
 import LeelItem from './leel_item';
 import NewPost from './new_post';
-// import {likeLeel, unLikeLeel} from '../../actions/leels';
 
 class LeelIndex extends React.Component {
 
@@ -19,6 +18,7 @@ class LeelIndex extends React.Component {
 
     render() {
         const {leels} = this.props;
+        // console.log(leels);
     
         return (
             
