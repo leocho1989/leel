@@ -99,7 +99,8 @@ return (
   <button className="editbtntext" onClick={showModal} ><EditOutlined /></button>
 <Modal title="Edit photos" visible={isModalVisible} onOk={handleOk} onCancel={handleCancel}>
    <input type="file" onChange={handleFile} multiple={true} key={Date.now()} />
-     <h3>Image preview</h3>
+   <p className="drag">** You can drag photos directly to above area **</p>
+     <h3>^^ Image preview</h3>
  {preview}
        <TextArea 
        showCount maxLength={150}

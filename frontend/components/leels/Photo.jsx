@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Modal, Button, Input } from 'antd';
 import {photoLeel} from '../../actions/leels';
+import { EditOutlined, MinusCircleFilled } from '@ant-design/icons';
 
 
 
@@ -74,8 +75,21 @@ export default ()=> {
       
       };
 
+    const handleDelete = index =>{
+        photoUrls.splice(index,1);
+        setPhotoUrls(photoUrls);
+        setBody(body);
+      //  console.log(photoUrls);
+  
+        
+      };
 
-    const preview = (photoUrls.length > 0)? (photoUrls.map(photoUrl=>(<img id="preview_pic" src={photoUrl} key={photoUrl} />))) : null;
+    // const preview = (photoUrls.length > 0)? (photoUrls.map(photoUrl=>(<img id="preview_pic" src={photoUrl} key={photoUrl} />))) : null;
+
+        const preview = (photoUrls.length > 0)? 
+      (photoUrls.map((photoUrl,index)=>(<div key={index}>
+      <p ><img id="preview_pic" src={photoUrl} /> <button className="delete_photo" key={photoUrl} onClick={()=>handleDelete(index)}><MinusCircleFilled /></button></p>
+      </div> ))) : null;
     
 
 
@@ -84,7 +98,8 @@ return (
     <div className="postbtn"><img id="small_pic" src={window.cameraURL} onClick={showModal} /><button className="textbtn" onClick={showModal} >Photo</button>
 <Modal title="Share photos" visible={isModalVisible} onOk={handleOk} onCancel={handleCancel}>
   <input type="file" onChange={handleFile} multiple={true} key={Date.now()} />
-<h3>Image preview</h3>
+  <p className="drag">** You can drag photos directly to above area **</p>
+<h3>^^ Image preview</h3>
 {preview}
         <TextArea 
         showCount maxLength={150}
