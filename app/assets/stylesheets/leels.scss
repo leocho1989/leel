@@ -24,6 +24,7 @@
   scrollbar-width: none;
  
   text-align: center;
+  justify-content: center;
 }
 
 .leels_show {
@@ -42,17 +43,21 @@
 }
 
 .avatar_post {
-  margin-top: 20px;
-  position: absolute;
+  margin-top: -45px;
+  // position: absolute;
 width: 70px;
+margin-right:-50px;
 }
 
 .leel_row {
   display: inline-block;
-  margin-left: auto;
-    margin-right: auto;
+  text-align: center;
+  justify-content: center;
+  // margin-left: auto;
+  //   margin-right: auto;
     align-items: center;
-    justify-content: center;
+    display: flex;
+    
     
 }
 
@@ -69,12 +74,18 @@ width: 70px;
     padding-right: 2vh;
     text-align: left;
     word-wrap: break-word;
-    position: relative;
+     overflow:auto;
+ 
      -ms-overflow-style: none; 
   scrollbar-width: none;
-  // height: 100%;
+  
   margin-left: 70px;
-    margin-right: auto;
+    
+    text-align: center;
+  justify-content: center;
+
+    align-items: center;
+    display: flex;
 }
 
 .post::-webkit-scrollbar {
@@ -112,8 +123,9 @@ width: 70px;
     font-size: 11pt;
     font-family: 'Pontano Sans', sans-serif;
     text-align: left;
-    width: 500px;
+    width: 490px;
     margin-top: 5px;
+    overflow:auto;
 
 }
 
@@ -123,6 +135,7 @@ width: 70px;
   float: left;
   font-size: 13px;
  font-family: 'Lora', serif;
+ 
 
   
 }
@@ -132,8 +145,9 @@ width: 70px;
 // margin-top: -3px;
   border-bottom: 1px dotted lightgray;
   // height: 23px;
-  width: 500px;
+  width: 490px;
   height: 23px;
+  
 }
 
 .edit_right {
@@ -149,15 +163,17 @@ width: 70px;
 
 .second_right {
   float: right;
+  
 
 }
 
   .like_count {
      color: black;
      font-size: 9pt;
-     width: 500px;
+     width: 490px;
      display: inline-block;
      height: 15px;
+   
      
   }
 
@@ -196,7 +212,7 @@ width: 70px;
     text-decoration: bold;
    font-family: 'Libre Baskerville', serif;
     text-align: left;
-    width: 500px;
+    width: 490px;
     margin-top: 5px;
 }
 

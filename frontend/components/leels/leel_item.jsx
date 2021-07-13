@@ -105,12 +105,13 @@ const postPhoto = (leel.photoUrls) ? (leel.photoUrls.map((photoUrl, index) => (<
     return (
         <>
         <div className="leel_row">
+           
         <div className="avatar_post">
        <Avatar size={64} icon={<UserOutlined />} />
        </div>
        <div className="post">
         <li className="leels_show">
-            
+           
             <div className="first_line">
             <p className="author_left"> <CrownTwoTone />&nbsp;{leel.author_username} 
             </p>
