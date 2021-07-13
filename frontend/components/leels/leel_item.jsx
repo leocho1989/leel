@@ -81,7 +81,7 @@ const edit_button = (currentUser.username===leel.author_username) ?
   </>
 ) : null;
 
-const postPhoto = (leel.photoUrls) ? (leel.photoUrls.map(photoUrl => (<img id="post_photo" src={photoUrl} key={photoUrl} />))) : null;
+const postPhoto = (leel.photoUrls) ? (leel.photoUrls.map(photoUrl => (<p><img id="post_photo" src={photoUrl} key={photoUrl} /></p>))) : null;
 
 
 

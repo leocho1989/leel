@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Modal, Button, Input } from 'antd';
 import { updateLeelPhoto} from '../../actions/leels';
-import { EditOutlined } from '@ant-design/icons';
+import { EditOutlined, MinusCircleFilled } from '@ant-design/icons';
 
 
 
@@ -15,7 +15,8 @@ export default ({leel})=> {
   const [photoAdds,setPhotoAdds] = useState(leel.photoUrls);
   const [photos, setPhotos] = useState(null);
   
-  
+  const [photoUrls, setPhotoUrls] = useState(leel.photoUrls);
+
 
   const dispatch = useDispatch();
 
@@ -33,24 +34,23 @@ export default ({leel})=> {
     const formData = new FormData();
  
 
-  formData.append('body', body);
+  formData.append('body', leel.body);
   formData.append('author_id', currentUser.id);
   formData.append('id',leel.id);
- 
+  
+  for (let i = 0; i <photoUrls.length; i++) {
+      formData.append('photoUrls[]', photoUrls[i]);
+    }
 
  if (photos) {
 
     for (let i = 0; i <photos.length; i++) {
       formData.append('photos[]', photos[i]);
-     
     }
   }
 
-  console.log(formData.get('id'));
+   dispatch(updateLeelPhoto(formData)).then(setPhotoUrls(leel.photoUrls));
 
-
-   dispatch(updateLeelPhoto(formData))
-   .then(setBody("")).then(setPhotoAdds([]));
    };
 
   const handleCancel = () => {
@@ -75,9 +75,22 @@ export default ({leel})=> {
       
       };
 
+      const handleDelete = index =>{
+        leel.photoUrls.splice(index,1);
+        setPhotoUrls(leel.photoUrls);
+        setBody(leel.body);
+      //  console.log(photoUrls);
+  
+        
+      };
+
+      
+
 
     const preview = (leel.photoUrls.length > 0)? 
-      (leel.photoUrls.map(photoUrl=>(<img id="preview_pic" src={photoUrl} key={photoUrl} />))) : null;
+      (leel.photoUrls.map((photoUrl,index)=>(<>
+      <p><img id="preview_pic" src={photoUrl} key={index} /> <button className="delete_photo" key={photoUrl} onClick={()=>handleDelete(index)}><MinusCircleFilled /></button></p>
+      </> ))) : null;
 
 
 return (

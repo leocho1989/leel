@@ -1,5 +1,5 @@
 class LeelPost < ApplicationRecord
-    validates :body, presence: true, length: { maximum: 240 }
+    validates :body, presence: true, length: { maximum: 240, allow_nil: true }
     # validate :ensure_photos
 
     has_many :likes,

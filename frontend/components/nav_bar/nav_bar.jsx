@@ -1,6 +1,6 @@
 import React from 'react';
 import {Link, useLocation} from 'react-router-dom';
-import { Menu, Dropdown } from 'antd';
+import { Input, Space, Menu, Dropdown } from 'antd';
 import { DownOutlined, GithubOutlined, UserOutlined, HeartOutlined,UnorderedListOutlined, UserAddOutlined, HomeFilled, LinkedinFilled } from '@ant-design/icons';
 
 export default ({currentUser, logout, ...props}) =>{
@@ -48,11 +48,21 @@ export default ({currentUser, logout, ...props}) =>{
             {(location.pathname === '/signup' || location.pathname === '/' || location.pathname === '/leel_posts') &&<Link className="button" id="login" to="/login">Log in</Link>}
         </div>
     );
+
+    const { Search } = Input;
+    const onSearch = value => console.log(value);
  
 
     return (
         <header className="nav-bar">
-            <Link className="logo" to="/">leel</Link>
+          <div className="navbar">
+          <Link className="logo" to="/">leel</Link>
+          <Space direction="vertical">
+            <Search className="search_bar" placeholder="Search leel" onSearch={onSearch} style={{ width: 300 }} />
+            </Space>
+          </div>
+            
+            
             <div>
                 {display}
                  
