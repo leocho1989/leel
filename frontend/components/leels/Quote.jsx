@@ -51,9 +51,10 @@ return (
     <div className="postbtn"><img id="small_pic" src={window.quotationURL} onClick={showModal} /><button className="textbtn" onClick={showModal} >Quote</button>
 <Modal title="A quote for today" visible={isModalVisible} onOk={handleOk} onCancel={handleCancel}>
  
-        <TextArea showCount maxLength={150}
+        <TextArea showCount maxLength={100}
             value={ body }
-            placeholder="Deliver a quote...                                                                                                Please add source below..." onChange={onChange} />
+            placeholder="Deliver a quote...                                                                                                Please add source below..." onChange={onChange}
+            autoSize={{ minRows: 1, maxRows: 2 }} />
       </Modal>
 </div>
 

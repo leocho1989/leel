@@ -101,9 +101,11 @@ return (
    <input type="file" onChange={handleFile} multiple={true} key={Date.now()} />
      <h3>Image preview</h3>
  {preview}
-       <TextArea showCount maxLength={240}
+       <TextArea showCount maxLength={150}
             value={ leel.body }
-            placeholder={leel.body} onChange={onChange} />
+            placeholder={leel.body}
+            autoSize={{ minRows: 3, maxRows: 4 }}
+            onChange={onChange} />
       </Modal>
       </>
 

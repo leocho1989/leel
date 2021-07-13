@@ -12,12 +12,13 @@ document.addEventListener('DOMContentLoaded',()=>{
         preloadedState= {
             session: {
                 currentUser: window.current_user
-                 
             }
+            
         };
     }
 
     const store = createStore(preloadedState);
+    
     
     ReactDOM.render(<Root store={store}/>, root);
 

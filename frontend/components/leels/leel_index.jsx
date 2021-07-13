@@ -21,7 +21,7 @@ class LeelIndex extends React.Component {
         // console.log(leels);
     
         return (
-            
+            <>
             <div className="leels">
                 <div className="leel_row">
     <div className="avatar_post">
@@ -48,6 +48,7 @@ class LeelIndex extends React.Component {
                 }
                 </ul>
             </div>
+            </>
                 )}
 }
 

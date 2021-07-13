@@ -86,9 +86,10 @@ return (
   <input type="file" onChange={handleFile} multiple={true} key={Date.now()} />
 <h3>Image preview</h3>
 {preview}
-        <TextArea showCount maxLength={240}
+        <TextArea showCount maxLength={150}
             value={ body }
-            placeholder="add description for your photos" onChange={onChange} />
+            placeholder="add description for your photos" onChange={onChange}
+            autoSize={{ minRows: 3, maxRows: 4 }} />
       </Modal>
 </div>
 

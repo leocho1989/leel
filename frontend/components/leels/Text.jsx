@@ -51,9 +51,11 @@ return (
     <div className="postbtn"><img id="small_pic" src={window.textURL} onClick={showModal} /><button className="textbtn" onClick={showModal} >Text</button>
 <Modal title="New leel" visible={isModalVisible} onOk={handleOk} onCancel={handleCancel}>
  
-        <TextArea showCount maxLength={240}
+        < TextArea className="text_area"
+         showCount maxLength={240}
             value={ body }
-            placeholder="Go ahead, put anything" onChange={onChange} />
+            placeholder="Go ahead, put anything" onChange={onChange}
+            autoSize={{ minRows: 5, maxRows: 6 }} />
       </Modal>
 </div>
 
