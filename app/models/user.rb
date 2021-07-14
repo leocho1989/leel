@@ -30,7 +30,7 @@ class User < ApplicationRecord
 
     has_many :followees,
     through: :followed_users,
-    source: :person_being_followed
+    source: :followee
 
     has_many :following_users,
     foreign_key: :followee_id,
@@ -38,7 +38,7 @@ class User < ApplicationRecord
 
     has_many :followers,
     through: :following_users,
-    source: :person_doing_the_following
+    source: :follower
     
     
     

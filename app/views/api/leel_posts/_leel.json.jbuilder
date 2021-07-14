@@ -5,6 +5,7 @@
 json.array!(@leels) do |_leel|
   json.id _leel.id
   json.author_username _leel.author.username
+  json.author_id _leel.author.id
   json.body _leel.body
   json.title _leel.title
   json.likes _leel.likes.count

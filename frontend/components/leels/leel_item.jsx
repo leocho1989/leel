@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { Avatar } from 'antd';
-import { UserOutlined, HeartFilled, HeartOutlined, CrownTwoTone, EditOutlined, CloseOutlined, LikeFilled, UserAddOutlined,UserDeleteOutlined  } from '@ant-design/icons';
+import { Avatar, Dropdown, Card } from 'antd';
+import { UserOutlined, HeartFilled, HeartOutlined, CrownTwoTone, EditOutlined, CloseOutlined, LikeFilled, UserAddOutlined,UserDeleteOutlined, IdcardOutlined } from '@ant-design/icons';
 import { useDispatch, useSelector } from 'react-redux';
 import { deleteLeel, updateLeel, likeLeel, unLikeLeel,followLeeler, unFollowLeeler  } from '../../actions/leels';
 import { Modal, Button, Input } from 'antd';
@@ -83,10 +83,10 @@ export default ( {leel} ) =>{
     }
     
          let followButtonText = <UserAddOutlined />;
-    let followButtonAction = ()=>dispatch(followLeeler(user.id));
+    let followButtonAction = ()=>dispatch(followLeeler(leel.author_id));
     if (user.followed_by_current_user) {
         followButtonText  = <UserDeleteOutlined />;
-        followButtonAction = () =>dispatch(unFollowLeeler(user.id));
+        followButtonAction = () =>dispatch(unFollowLeeler(leel.author_id));
     }
 
 
@@ -124,6 +124,17 @@ const postPhoto = (leel.photoUrls) ? (leel.photoUrls.map((photoUrl, index) => (<
 
 
 
+ const userinfo =  
+ <>
+ <Card style={{ width: 150 }}>
+   <p className="popupcard">&nbsp;&nbsp;<IdcardOutlined />&nbsp;&nbsp;{leel.author_username}</p>
+   <a href={`/#/users/${leel.author_id}`}>Go to homepage</a>
+      <p>Followings:</p>
+      
+    </Card>
+    </>
+
+
 
 
     return (
@@ -131,7 +142,11 @@ const postPhoto = (leel.photoUrls) ? (leel.photoUrls.map((photoUrl, index) => (<
         <div className="leel_row">
            
         <div className="avatar_post">
-       <Avatar size={64} icon={<UserOutlined />} />
+          <Dropdown overlay={userinfo}>
+    <a className="ant-dropdown-link" onClick={e => e.preventDefault()}>
+      <Avatar size={64} icon={<UserOutlined />} />
+    </a>
+  </Dropdown>
        </div>
        <div className="post">
         <li className="leels_show">
