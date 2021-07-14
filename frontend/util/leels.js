@@ -56,3 +56,18 @@ export const deleteLikeFromLeel = id => $.ajax({
     method: "DELETE",
     data: {id:id}
 });
+
+
+export const postFollowToLeeler = id => $.ajax({
+    url: "/api/follows",
+    method: "POST",
+    data: {id: id},
+    
+});
+
+export const deleteFollowFromLeeler = id => $.ajax({
+
+    url: "/api/follows",
+    method: "DELETE",
+    data: {id:id}
+});

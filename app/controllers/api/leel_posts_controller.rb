@@ -1,4 +1,6 @@
 class Api::LeelPostsController < ApplicationController
+
+
     def create
         @leel = current_user.leel_posts.new(leel_params)
         if @leel.save

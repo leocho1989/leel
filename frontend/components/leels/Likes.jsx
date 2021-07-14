@@ -18,14 +18,14 @@ export default()=> {
     const liked = leels.filter(leel => leel.liked_by_current_user===true);
 
    
-const display = (liked.length > 0) ? (liked.reverse().map(leel=>(
+const display = (liked.length > 0) ? (<><div className="likes_num"><p>Likes: {liked.length}</p></div><ul> {liked.reverse().map(leel=>(
                     <LeelItem
                         key={`leel${leel.id}`}
                         leel = {leel}
                          likeLeel = {likeLeel}
                          unLikeLeel = {unLikeLeel} />
                          
-                )) ) : (<div className="nolikes"><p>No likes yet!!</p></div>);
+                )) }</ul></>) : (<div className="nolikes"><p>No likes yet!!</p></div>);
 
         return (
     

@@ -68,3 +68,14 @@ export const unLikeLeel= id=>dispatch=>(
      LeelAPIUtil.deleteLikeFromLeel(id)
     .then(leel => dispatch(fetchLeels()))
 );
+
+
+export const followLeeler= id=>dispatch=>(
+    LeelAPIUtil.postFollowToLeeler(id)
+    .then(leel => dispatch(fetchLeels()))
+);
+
+export const unFollowLeeler= id=>dispatch=>(
+     LeelAPIUtil.deleteFollowFromLeeler(id)
+    .then(leel => dispatch(fetchLeels()))
+);

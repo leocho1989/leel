@@ -1,7 +1,9 @@
 import React, {useState} from 'react';
-import {fetchLeels, likeLeel, unLikeLeel} from '../../actions/leels';
+import {likeLeel, unLikeLeel} from '../../actions/leels';
+import {fetchUsers,fetchUser} from '../../actions/users';
 import { useDispatch, useSelector } from 'react-redux';
 import LeelItem from './leel_item';
+import NewPost from './new_post';
 
 
 export default()=> {
@@ -9,7 +11,8 @@ export default()=> {
     const dispatch = useDispatch();
     
     const leelsOb = useSelector((state)=>state.leels);
-    console.log(leelsOb);
+ 
+        dispatch(fetchUsers());
 
     const leels = Object.keys(leelsOb).map(key=>leelsOb[key]);
 
@@ -18,14 +21,28 @@ export default()=> {
     const userLeel = leels.filter(leel => leel.author_username===currentUser.username);
 
    
-const display = (userLeel.length > 0) ? (userLeel.reverse().map(leel=>(
+const display = (userLeel.length > 0) ? (<><div className="leel_row">
+    <div className="avatar_post">
+        <img id="small_pic" src={window.avatarURL} />
+    </div>
+                
+                <div className="new_post"><NewPost />
+                </div>
+                </div><ul>{userLeel.reverse().map(leel=>(
                     <LeelItem
                         key={`leel${leel.id}`}
                         leel = {leel}
                          likeLeel = {likeLeel}
                          unLikeLeel = {unLikeLeel} />
                          
-                )) ) : (<div className="noleels"><p>You don't have any leels yet!!</p></div>);
+                ))} </ul></>) : (<><div className="leel_row">
+    <div className="avatar_post">
+        <img id="small_pic" src={window.avatarURL} />
+    </div>
+                
+                <div className="new_post"><NewPost />
+                </div>
+                </div><div className="noleels"><p>You don't have any leels yet!!</p></div></>);
 
         return (
     

@@ -24,23 +24,23 @@ class User < ApplicationRecord
     through: :likes,
     source: :leel_post
 
-    has_many :fanships,
-    primary_key: :id,
-    foreign_key: :followee_id,
-    class_name: :Follow
-
-    has_many :followships,
-    primary_key: :id,
+    has_many :followed_users,
     foreign_key: :follower_id,
-    class_name: :Follow
-
-    has_many :followers,
-    through: :fanships,
-    source: :follower
+    class_name: "Follow"
 
     has_many :followees,
-    through: :followships,
-    source:  :followee
+    through: :followed_users,
+    source: :person_being_followed
+
+    has_many :following_users,
+    foreign_key: :followee_id,
+    class_name: "Follow"
+
+    has_many :followers,
+    through: :following_users,
+    source: :person_doing_the_following
+    
+    
     
     
 
