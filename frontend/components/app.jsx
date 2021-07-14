@@ -7,6 +7,7 @@ import Likes from './leels/Likes';
 import {Route} from 'react-router-dom';
 import {AuthRoute, ProtectedRoute} from '../util/route_util' ;
 import Home from './home';
+import UserShow from './leels/UserShow';
 
 export default ()=> (
     <div className="page">
@@ -17,6 +18,7 @@ export default ()=> (
         <Route path="/login" component={LoginContainer}/>
         <ProtectedRoute path="/leel_posts" component={LeelIndexContainer} />
         <Route path="/likes" component={Likes} />
+        <Route path="/users/:id" component={UserShow} />
         
     </div>
 )
