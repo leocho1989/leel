@@ -67,7 +67,7 @@ export const postFollowToLeeler = id => $.ajax({
 
 export const deleteFollowFromLeeler = id => $.ajax({
 
-    url: "/api/follows",
+    url: `/api/follows/${user.id}`,
     method: "DELETE",
     data: {id:id}
 });

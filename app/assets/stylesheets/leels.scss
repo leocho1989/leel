@@ -43,7 +43,8 @@
 
 .avatar_post {
   margin-top: -45px;
- 
+ height: 100%;
+ vertical-align: top;
 width: 70px;
 margin-right:-50px;
 
@@ -221,7 +222,11 @@ margin-right:-50px;
   font-family: 'Lobster', cursive;
   font-size: 14px;
 }
-
+.followbtn {
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
 
 
 @keyframes NO {

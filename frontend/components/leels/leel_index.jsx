@@ -12,13 +12,20 @@ class LeelIndex extends React.Component {
 
     componentDidMount() {
         this.props.fetchLeels();
+        this.props.fetchUsers();
+        // console.log(this.props);
     }
 
 
 
     render() {
         const {leels} = this.props;
-        // console.log(leels);
+        const {users} = this.props;
+// console.log(leels);
+// console.log(users);
+// console.log(this.props);
+
+        // console.log(users.values);
     
         return (
             <>
@@ -37,11 +44,15 @@ class LeelIndex extends React.Component {
 
             {
                 leels.reverse().map(leel=>(
+                    {},
                     <LeelItem
                         key={`leel${leel.id}`}
                         leel = {leel}
                          likeLeel = {this.props.likeLeel}
-                         unLikeLeel = {this.props.unLikeLeel} />
+                         unLikeLeel = {this.props.unLikeLeel}
+                         followLeeler = {this.props.followLeeler}
+                         unfollowLeeler = {this.props.unfollowLeeler}
+                         />
                          
                 )) 
                 

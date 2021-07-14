@@ -1,14 +1,32 @@
 import React, { useState } from 'react';
 import { Avatar } from 'antd';
-import { UserOutlined, HeartFilled, HeartOutlined, CrownTwoTone, EditOutlined, CloseOutlined, LikeFilled } from '@ant-design/icons';
+import { UserOutlined, HeartFilled, HeartOutlined, CrownTwoTone, EditOutlined, CloseOutlined, LikeFilled, UserAddOutlined,UserDeleteOutlined  } from '@ant-design/icons';
 import { useDispatch, useSelector } from 'react-redux';
-import { deleteLeel, updateLeel  } from '../../actions/leels';
+import { deleteLeel, updateLeel, likeLeel, unLikeLeel,followLeeler, unFollowLeeler  } from '../../actions/leels';
 import { Modal, Button, Input } from 'antd';
 import PhotoEdit from './PhotoEdit';
 
 
-export default ( {leel, likeLeel, unLikeLeel} ) =>{
+export default ( {leel} ) =>{
+
+  const dispatch = useDispatch();
+
+  // dispatch(fetchUsers());
    const currentUser = useSelector((state) => state.session.currentUser);
+   const usersOb = useSelector((state) => state.users);
+   const users = Object.keys(usersOb).map(key=>usersOb[key]);
+  //  console.log(usersOb);
+  //  console.log(users);
+
+   const user = users.filter(userOb=>userOb.username===leel.author_username);
+
+  //  users.forEach((userOb) => {
+  //    if (userOb.username === leel.author_username) {
+  //       user = userOb;
+  //    }
+  //  });
+
+   console.log(user);
 
    const { TextArea } = Input;
 
@@ -16,7 +34,7 @@ export default ( {leel, likeLeel, unLikeLeel} ) =>{
   const [body=leel.body,setBody] = useState();
   const [title=leel.title, setTitle] = useState();
 
-    const dispatch = useDispatch();
+
     const handleDelete =(e)=>{
         e.preventDefault();
         dispatch(deleteLeel(leel));
@@ -58,12 +76,18 @@ export default ( {leel, likeLeel, unLikeLeel} ) =>{
     };
 
       let likeButtonText = <HeartOutlined/>;
-    let likeButtonAction = ()=>likeLeel(leel.id);
+    let likeButtonAction = ()=>dispatch(likeLeel(leel.id));
     if (leel.liked_by_current_user) {
         likeButtonText  = <HeartFilled />;
-        likeButtonAction = () =>unLikeLeel(leel.id);
+        likeButtonAction = () =>dispatch(unLikeLeel(leel.id));
     }
     
+         let followButtonText = <UserAddOutlined />;
+    let followButtonAction = ()=>dispatch(followLeeler(user.id));
+    if (user.followed_by_current_user) {
+        followButtonText  = <UserDeleteOutlined />;
+        followButtonAction = () =>dispatch(unFollowLeeler(user.id));
+    }
 
 
 const edit_button = (currentUser.username===leel.author_username) ? 
@@ -113,7 +137,7 @@ const postPhoto = (leel.photoUrls) ? (leel.photoUrls.map((photoUrl, index) => (<
         <li className="leels_show">
            
             <div className="first_line">
-            <p className="author_left"> <CrownTwoTone />&nbsp;{leel.author_username} 
+            <p className="author_left"> <CrownTwoTone />&nbsp;{leel.author_username}&nbsp;&nbsp; <button className="followbtn" onClick={followButtonAction}>{followButtonText}</button>
             </p>
             <p className="edit_right">{edit_button}
             {delete_button}</p>
