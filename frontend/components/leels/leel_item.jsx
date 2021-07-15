@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Avatar, Dropdown, Card } from 'antd';
-import { UserOutlined, HeartFilled, HeartOutlined, CrownTwoTone, EditOutlined, CloseOutlined, LikeFilled, UserAddOutlined,UserDeleteOutlined, IdcardOutlined } from '@ant-design/icons';
+import { UserOutlined, HeartFilled, HeartOutlined, CrownTwoTone, EditOutlined, CloseOutlined, LikeFilled, UserAddOutlined,UserDeleteOutlined, IdcardOutlined, GlobalOutlined } from '@ant-design/icons';
 import { useDispatch, useSelector } from 'react-redux';
 import { deleteLeel, updateLeel, likeLeel, unLikeLeel,followLeeler, unFollowLeeler  } from '../../actions/leels';
 import { Modal, Button, Input } from 'antd';
@@ -126,9 +126,14 @@ const postPhoto = (leel.photoUrls) ? (leel.photoUrls.map((photoUrl, index) => (<
 
  const userinfo =  
  <>
- <Card style={{ width: 150 }}>
-   <p className="popupcard">&nbsp;&nbsp;<IdcardOutlined />&nbsp;&nbsp;{leel.author_username}</p>
-   <a href={`/#/users/${leel.author_id}`}>Go to homepage</a>
+ <Card style={{ width: 180 }}>
+   
+   <div className="avatar_post_popup">
+        <img id="small_pic" src={window.avatarURL} />
+    </div>
+    <br></br>
+    <p className="popupcard"><IdcardOutlined />&nbsp;&nbsp;{leel.author_username}</p>
+   <a href={`/#/users/${leel.author_id}`}><GlobalOutlined />&nbsp;Homepage</a>
       <p>Followings:</p>
       
     </Card>
