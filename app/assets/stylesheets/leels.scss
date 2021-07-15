@@ -90,6 +90,7 @@ margin-right:-50px;
     align-items: center;
     display: flex;
      border: 1px solid rgba(182, 181, 181, 0.5);
+     box-shadow: 8px 10px 15px 0 rgba(0, 0, 0, 0.2);
 }
 
 .post::-webkit-scrollbar {
@@ -114,6 +115,7 @@ margin-right:-50px;
   scrollbar-width: none;
   color: black;
     border: 1px solid rgba(182, 181, 181, 0.5);
+    box-shadow: 8px 10px 15px 0 rgba(0, 0, 0, 0.2);
   
 
 }

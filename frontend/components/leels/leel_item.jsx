@@ -12,8 +12,9 @@ export default ( {leel} ) =>{
   const dispatch = useDispatch();
 
   // dispatch(fetchUsers());
-   const currentUser = useSelector((state) => state.session.currentUser);
+  
    const usersOb = useSelector((state) => state.users);
+    const currentUser = useSelector((state) => state.session.currentUser);
    const users = Object.keys(usersOb).map(key=>usersOb[key]);
   //  console.log(usersOb);
   //  console.log(users);
@@ -26,7 +27,7 @@ export default ( {leel} ) =>{
   //    }
   //  });
 
-   console.log(user);
+  //  console.log(user);
 
    const { TextArea } = Input;
 

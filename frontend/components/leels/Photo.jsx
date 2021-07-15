@@ -97,9 +97,17 @@ return (
 
     <div className="postbtn"><img id="small_pic" src={window.cameraURL} onClick={showModal} /><button className="textbtn" onClick={showModal} >Photo</button>
 <Modal title="Share photos" visible={isModalVisible} onOk={handleOk} onCancel={handleCancel}>
-  <input type="file" onChange={handleFile} multiple={true} key={Date.now()} />
-  <p className="drag">** You can drag photos directly to above area **</p>
 
+		<div className="upload_title">
+			<h1 className = "upload_text">Drop file to upload</h1>
+		</div>
+
+		<div className="dropzone">
+			<img src={window.uploadURL} 
+      className="upload-icon" />
+			<input type="file" className="upload-input"  onChange={handleFile} multiple={true} key={Date.now()}/>
+		</div>
+<br />
 {preview}
         <TextArea 
         showCount maxLength={150}
