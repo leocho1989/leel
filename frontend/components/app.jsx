@@ -12,16 +12,16 @@ import Footer from './nav_bar/footer';
 
 export default ()=> (
     <div className="page">
-        <Route path="/" component={ Footer} />
-        <Route path="/" component={ NavBarContainer} />
         
+        <NavBarContainer />
+       
         <Route exact path="/" component={Home} />
         <AuthRoute path="/signup" component={SignupContainer} />
         <AuthRoute path="/login" component={LoginContainer}/>
         <ProtectedRoute path="/leel_posts" component={LeelIndexContainer} />
         <Route path="/likes" component={Likes} />
         <Route path="/users/:id" component={UserShow} />
-        
-        
+       
+         <Footer />
     </div>
 )

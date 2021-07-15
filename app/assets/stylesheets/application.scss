@@ -22,7 +22,9 @@
  @import './leels.scss';
  @import './likes.scss';
  @import './newpost.scss';
+ @import './upload.scss';
  @import './antd.scss';
+  
 
 
  @import url('https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Fredoka+One&family=Indie+Flower&family=Lobster&family=Pacifico&display=swap');
@@ -46,6 +48,7 @@
 
 
 body {
+  // grid-area: content;
   background-color: #001935;
   color: white;
   font-family: Georgia, "Times New Roman", Times, serif;
@@ -63,19 +66,29 @@ body {
   grid-template-rows: 45px calc(100vh - 45px); 
   grid-template-areas:
     "header"
-    "content"
-    "footer";
+    "content";
       
 }
 
+.page_content {
+  grid-area: content;
+}
+
 .bottom {
-  grid-area: footer;
+  // grid-area: footer;
   color: rgb(0, 0, 0);
-  text-align: right;
+  // text-align: right;
   font-family: 'Concert One', cursive;
+  position: fixed;
+    bottom: 0;
+    text-align: right;
+    align-items: right;
+    width: 100%;
+     
+     
   
-  // border-top: 1px solid rgba(182, 181, 181, 0.5);
-  // margin-bottom: auto;
+  border-top: 1px solid rgba(182, 181, 181, 0.5);
+  // margin-top: 700px;
 }
 
 .nav-bar {

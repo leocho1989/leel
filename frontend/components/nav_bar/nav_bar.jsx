@@ -59,6 +59,7 @@ export default ({ currentUser, logout, ...props}) =>{
  
 
     return (
+      <>
         <header className="nav-bar">
           <div className="navbar">
           <Link className="logo" to="/">leel</Link>
@@ -66,13 +67,11 @@ export default ({ currentUser, logout, ...props}) =>{
             <Search className="search_bar" placeholder="Search leel" onSearch={onSearch} style={{ width: 300 }} />
             </Space>
           </div>
-            
-            
             <div>
-                {display}
-                 
+                {display}  
             </div>
-
         </header>
+
+        </>
     )
 }

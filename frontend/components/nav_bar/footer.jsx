@@ -1,10 +1,9 @@
 import React from 'react';
-
 import { GithubOutlined, LinkedinFilled, MailFilled } from '@ant-design/icons';
 
 export default ()=>{
 
-   
+//    window.location.reload();
 
 return (
 
