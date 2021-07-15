@@ -25,6 +25,8 @@
  
   text-align: center;
   justify-content: center;
+
+  margin-top: 40px;
 }
 
 .leels_show {
@@ -39,6 +41,7 @@
     overflow:auto;
      -ms-overflow-style: none; 
   scrollbar-width: none;
+   
 }
 
 .avatar_post {
@@ -86,6 +89,7 @@ margin-right:-50px;
 
     align-items: center;
     display: flex;
+     border: 1px solid rgba(182, 181, 181, 0.5);
 }
 
 .post::-webkit-scrollbar {
@@ -109,7 +113,7 @@ margin-right:-50px;
      -ms-overflow-style: none; 
   scrollbar-width: none;
   color: black;
-    
+    border: 1px solid rgba(182, 181, 181, 0.5);
   
 
 }

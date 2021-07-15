@@ -34,7 +34,7 @@ export default ({currentUser, logout, ...props}) =>{
     const display = currentUser ? (
         <div>
              <div>
-                 <a className="home_icon" href="/"><HomeFilled /></a>&nbsp;&nbsp;&nbsp;<a target="_blank" className="home_icon" href="https://github.com/leocho1989"><GithubOutlined /></a>&nbsp;&nbsp;&nbsp;<LinkedinFilled />&nbsp;&nbsp;&nbsp;
+                 <a className="home_icon" href="/"><HomeFilled /></a>&nbsp;&nbsp;&nbsp;
                <Dropdown overlay={menu}>
     <a className="ant-dropdown-link" onClick={e => e.preventDefault()}>
       <UserOutlined />&nbsp;{currentUser.username} <DownOutlined />

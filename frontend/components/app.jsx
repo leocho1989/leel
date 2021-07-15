@@ -8,6 +8,7 @@ import {Route} from 'react-router-dom';
 import {AuthRoute, ProtectedRoute} from '../util/route_util' ;
 import Home from './home';
 import UserShow from './leels/UserShow';
+import Footer from './nav_bar/footer';
 
 export default ()=> (
     <div className="page">
@@ -19,6 +20,7 @@ export default ()=> (
         <ProtectedRoute path="/leel_posts" component={LeelIndexContainer} />
         <Route path="/likes" component={Likes} />
         <Route path="/users/:id" component={UserShow} />
+        <Route path="/" component={Footer} />
         
     </div>
 )

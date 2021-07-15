@@ -42,6 +42,8 @@
 
  @import url('https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap');
 
+ @import url('https://fonts.googleapis.com/css2?family=Concert+One&display=swap');
+
 
 body {
   background-color: #001935;
@@ -61,14 +63,19 @@ body {
   grid-template-rows: 45px calc(100vh - 45px); 
   grid-template-areas:
     "header"
-    "content";
+    "content"
+    "footer";
+      
 }
 
-.header {
-}
-
-.content {
-  /* overflow condition on parent */
+.footer {
+  grid-area: footer;
+  color: rgb(0, 0, 0);
+  text-align: right;
+  font-family: 'Concert One', cursive;
+  
+  // border-top: 1px solid rgba(182, 181, 181, 0.5);
+  // margin-bottom: auto;
 }
 
 .nav-bar {
@@ -85,6 +92,7 @@ body {
   left: 0px;
   overflow: hidden;
   border-bottom: 1px solid rgba(182, 181, 181, 0.5);
+ 
    
 
 }
