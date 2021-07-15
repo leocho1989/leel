@@ -22,7 +22,7 @@ export default()=> {
   const currentUser = useSelector((state) => state.session.currentUser);
   
 
-    const userLeel = leels.filter(leel => leel.author_username===currentUser.username);
+    const userLeel = (currentUser) ? (leels.filter(leel => leel.author_username===currentUser.username)) : (<Redirect to="/login" />);
 
  
 const display = (userLeel.length > 0 ) ? (<><div className="leel_row">
