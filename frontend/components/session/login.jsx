@@ -1,6 +1,5 @@
 import React from 'react';
-import {Redirect} from 'react-router-dom';
-import DemoUser from './demo_user';
+import {Redirect} from 'react-router-dom'
 
 class Login extends React.Component {
 
@@ -8,7 +7,7 @@ class Login extends React.Component {
     componentDidUpdate(PreProps){
      if (this.props.errors!== PreProps.errors) {
          this.setState({ errorMessages: this.props.errors});}
-
+        
     }
 
 constructor(props) {
@@ -16,9 +15,12 @@ super(props);
 this.state = {
     username: '',
     password: '',
+    id: '',
 errorMessages:[]};
 
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleDemoUser = this.handleDemoUser.bind(this);
+    
 }
 
 handleInput(type) {
@@ -32,6 +34,16 @@ handleSubmit(e) {
     this.props.login(this.state)
     .then(() => this.props.history.push('/leel_posts'));
 }
+
+handleDemoUser (e) {
+     e.preventDefault();
+     this.setState({
+    username: 'test',
+    password: 'testtest',
+    id:18
+});
+}
+
 render() {
      if (this.props.currentUser)
     {
@@ -52,7 +64,7 @@ render() {
             </label>
             <br></br>
             <button id="btn" onClick={this.handleSubmit}>Log in</button>
-            <p><DemoUser /></p>
+            <p><button id="demobtn" to="/" onClick={this.handleDemoUser}>Demo User</button></p>
         </form>
 
     </div>

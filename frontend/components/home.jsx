@@ -14,6 +14,8 @@ export default ()=> {
         dispatch(login({
             username: 'test',
             password: 'testtest',
+            id: 18,
+            email: "test@google.com"
         }));
     };
 

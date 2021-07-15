@@ -1,5 +1,6 @@
 import React from 'react';
-import DemoUser from './demo_user';
+
+
 class Signup extends React.Component {
     constructor(props) {
         super(props);
@@ -10,6 +11,7 @@ class Signup extends React.Component {
             errorMessages: []
         };
         this.handleSubmit= this.handleSubmit.bind(this);
+this.handleDemoUser = this.handleDemoUser.bind(this);
 
          }
 
@@ -30,6 +32,16 @@ class Signup extends React.Component {
         e.preventDefault();
         this.props.createNewUser(this.state).then(()=>this.props.history.push('/leel_posts'));
     }
+
+    handleDemoUser (e) {
+     e.preventDefault(); 
+ this.props.login({
+    username: 'test',
+    password: 'testtest',
+    id:18
+})
+    .then(() => this.props.history.push('/leel_posts'));
+}
 render() {
     return (
         
@@ -52,7 +64,7 @@ render() {
             </label>
             <br></br>
             <button id="btn" onClick={this.handleSubmit}>Sign Up</button>
-            <p><DemoUser /></p>
+            <p><button id="demobtn" to="/" onClick={this.handleDemoUser}>Demo User</button></p>
             </form>
             
         </div>

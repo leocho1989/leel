@@ -1,7 +1,8 @@
 import React from 'react';
 import LeelIndex from './leel_index';
-import {fetchLeels, fetchLeel, createLeel, updateLeel, deleteLeel, likeLeel, unLikeLeel, followLeeler, unFollowLeeler } from '../../actions/leels';
+import {fetchLeels, fetchLeel, createLeel, updateLeel, deleteLeel } from '../../actions/leels';
 import {fetchUsers, fetchUser} from '../../actions/users';
+
 import { connect } from 'react-redux';
 
 
@@ -16,7 +17,7 @@ const mDTP = dispatch => (dispatch)=>({
     createLeel:(leel) => dispatch(createLeel(leel)),
     updateLeel:(leel) => dispatch(updateLeel(leel)),
     deleteLeel:(leel) => dispatch(deleteLeel(leel)),
-
+  
     fetchUsers:() => dispatch(fetchUsers()),
     fetchUser:(id) => dispatch(fetchUser(id))
 });

@@ -1,11 +1,13 @@
 import React from 'react';
 import {Link, useLocation} from 'react-router-dom';
 import { Input, Space, Menu, Dropdown } from 'antd';
-import { DownOutlined, GithubOutlined, UserOutlined, HeartOutlined,UnorderedListOutlined, UserAddOutlined, HomeFilled, LinkedinFilled } from '@ant-design/icons';
+import { DownOutlined,  UserOutlined, HeartOutlined,UnorderedListOutlined, UserAddOutlined, HomeFilled} from '@ant-design/icons';
+import { useSelector } from 'react-redux';
 
-export default ({currentUser, logout, ...props}) =>{
+export default ({ currentUser, logout, ...props}) =>{
 
     let location = useLocation();
+   
 
    const menu = currentUser ? 
     (<>

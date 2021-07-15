@@ -11,23 +11,15 @@ export default ( {leel} ) =>{
 
   const dispatch = useDispatch();
 
-  // dispatch(fetchUsers());
   
    const usersOb = useSelector((state) => state.users);
     const currentUser = useSelector((state) => state.session.currentUser);
    const users = Object.keys(usersOb).map(key=>usersOb[key]);
-  //  console.log(usersOb);
-  //  console.log(users);
+  
 
    const user = users.filter(userOb=>userOb.username===leel.author_username);
 
-  //  users.forEach((userOb) => {
-  //    if (userOb.username === leel.author_username) {
-  //       user = userOb;
-  //    }
-  //  });
-
-  //  console.log(user);
+ 
 
    const { TextArea } = Input;
 
