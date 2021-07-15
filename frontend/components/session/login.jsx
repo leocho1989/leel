@@ -1,5 +1,5 @@
 import React from 'react';
-import {Redirect} from 'react-router-dom'
+import {Redirect} from 'react-router-dom';
 
 class Login extends React.Component {
 
@@ -37,11 +37,12 @@ handleSubmit(e) {
 
 handleDemoUser (e) {
      e.preventDefault();
-     this.setState({
+this.props.login({
     username: 'test',
     password: 'testtest',
     id:18
-});
+})
+    .then(() => this.props.history.push('/leel_posts'));
 }
 
 render() {

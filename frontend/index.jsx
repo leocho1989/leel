@@ -8,10 +8,10 @@ document.addEventListener('DOMContentLoaded',()=>{
     let preloadedState;
     
 
-    if (window.current_user) {
+    if (window.currentUser) {
         preloadedState= {
             session: {
-                currentUser: window.current_user
+                currentUser: window.currentUser
             }
             
         };

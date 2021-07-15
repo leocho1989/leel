@@ -1,8 +1,8 @@
-import React, {useState} from 'react';
+import React from 'react';
 // import {fetchLeels, likeLeel, unLikeLeel} from '../../actions/leels';
 import { useDispatch, useSelector } from 'react-redux';
 import LeelItem from './leel_item';
-
+import {Redirect} from 'react-router-dom';
 
 export default()=> {
 
@@ -10,6 +10,7 @@ export default()=> {
     
     const leelsOb = useSelector((state)=>state.leels);
     // console.log(leelsOb);
+    const currentUser = useSelector((state) => state.session.currentUser);
 
     const leels = Object.keys(leelsOb).map(key=>leelsOb[key]);
 
@@ -36,7 +37,7 @@ const display = (liked.length > 0) ? (<><div className="likes_num"><p>Likes: {li
                 
                 <ul>
 
-            {display
+            {(currentUser) ? (display): (<Redirect to="/login" />)
                 }
                 </ul>
             </div>

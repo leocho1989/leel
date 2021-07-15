@@ -1,12 +1,15 @@
-import React, {useState} from 'react';
+import React from 'react';
 import {likeLeel, unLikeLeel} from '../../actions/leels';
 import {fetchUsers,fetchUser} from '../../actions/users';
 import { useDispatch, useSelector } from 'react-redux';
 import LeelItem from './leel_item';
 import NewPost from './new_post';
+import {Redirect} from 'react-router-dom';
+
 
 
 export default()=> {
+       
 
     const dispatch = useDispatch();
     
@@ -17,11 +20,12 @@ export default()=> {
     const leels = Object.keys(leelsOb).map(key=>leelsOb[key]);
 
   const currentUser = useSelector((state) => state.session.currentUser);
+  
 
     const userLeel = leels.filter(leel => leel.author_username===currentUser.username);
 
-   
-const display = (userLeel.length > 0) ? (<><div className="leel_row">
+ 
+const display = (userLeel.length > 0 ) ? (<><div className="leel_row">
     <div className="avatar_post">
         <img id="small_pic" src={window.avatarURL} />
     </div>
@@ -44,6 +48,8 @@ const display = (userLeel.length > 0) ? (<><div className="leel_row">
                 </div>
                 </div><div className="noleels"><p>You don't have any leels yet!!</p></div></>);
 
+             
+
         return (
     
    <>
@@ -54,7 +60,7 @@ const display = (userLeel.length > 0) ? (<><div className="leel_row">
                 
                 <ul>
 
-            {display
+            {(currentUser) ? (display): (<Redirect to="/login" />)
                 }
                 </ul>
             </div>
