@@ -31,7 +31,7 @@ export default ({ currentUser, logout, ...props}) =>{
         <UserAddOutlined /> Following (disabled)
       </a>
     </Menu.Item > */}
-    <Menu.Item key="4" danger onClick={logout}><RocketFilled />Log Out</Menu.Item>
+    <Menu.Item key="4" danger onClick={logout}><RocketFilled /> Log Out</Menu.Item>
   </Menu>
   </>
 ) : null;
