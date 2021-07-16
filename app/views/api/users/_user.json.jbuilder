@@ -4,5 +4,5 @@ json.array!(@users) do |_user|
     # json.email _user.email
     json.avatar url_for(_user.avatar) if _user.avatar.attached?
     json.followers _user.followed_users.count 
-    json.followed_by_current_user !!_user.followed_users.find_by(follower_id: current_user.id, followee_id:params[:id])
+    json.followed_by_current_user !!_user.followed_users.find_by(follower_id: current_user.id)
 end

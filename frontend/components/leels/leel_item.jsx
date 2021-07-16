@@ -92,7 +92,7 @@ const avatar_pic = (user && user.avatar) ? (<img id="avatar" src={user.avatar} /
     
          let followButtonText = <UserAddOutlined />;
     let followButtonAction = ()=>dispatch(followLeeler(leel.author_id));
-    if (user && user.followed_by_current_user) {
+    if (user && user.followed_by_current_user===true) {
         followButtonText  = <UserDeleteOutlined />;
         followButtonAction = () =>dispatch(unFollowLeeler(leel.author_id));
     }
