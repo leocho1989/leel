@@ -25,12 +25,12 @@ export default ({ currentUser, logout, ...props}) =>{
         <HeartOutlined /> Likes
       </a>
     </Menu.Item >
-    
+{/*     
     <Menu.Item key="3" disabled>
       <a href="/">
         <UserAddOutlined /> Following (disabled)
       </a>
-    </Menu.Item >
+    </Menu.Item > */}
     <Menu.Item key="4" danger onClick={logout}>Log Out</Menu.Item>
   </Menu>
   </>
