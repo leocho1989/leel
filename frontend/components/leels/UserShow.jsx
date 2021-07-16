@@ -5,11 +5,16 @@ import { useDispatch, useSelector } from 'react-redux';
 import LeelItem from './leel_item';
 import NewPost from './new_post';
 import {Redirect} from 'react-router-dom';
-
+import {useLocation} from 'react-router-dom';
 
 
 export default()=> {
        
+let location = useLocation();
+
+const user_num = location.pathname.split('/')[2];
+const nNum = parseInt(user_num);
+
 
     const dispatch = useDispatch();
     
@@ -22,7 +27,8 @@ export default()=> {
   const currentUser = useSelector((state) => state.session.currentUser);
   
 
-    const userLeel = (currentUser) ? (leels.filter(leel => leel.author_username===currentUser.username)) : (<Redirect to="/login" />);
+    const userLeel = (currentUser) ? (leels.filter(leel => leel.author_id===nNum)) : (<Redirect to="/login" />);
+    console.log(userLeel);
 
  
 const display = (userLeel.length > 0 ) ? (<><div className="leel_row">
@@ -46,7 +52,7 @@ const display = (userLeel.length > 0 ) ? (<><div className="leel_row">
                 
                 <div className="new_post"><NewPost />
                 </div>
-                </div><div className="noleels"><p>You don't have any leels yet!!</p></div></>);
+                </div><div className="noleels"><p>No leels yet!!</p></div></>);
 
              
 
