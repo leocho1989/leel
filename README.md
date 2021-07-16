@@ -14,4 +14,6 @@ leel is developed by using Ruby on Rails, React, HTML and CSS.
 
 Highlight:
 
+<img src="https://app-leel-pro.s3.us-west-1.amazonaws.com/Screen+Shot+2021-07-16+at+6.26.58+AM.png"/>
 
+<img src="https://app-leel-pro.s3.us-west-1.amazonaws.com/Screen+Shot+2021-07-16+at+6.27.51+AM.png"/>
