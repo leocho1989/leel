@@ -76,7 +76,7 @@ const userinfo =
     <br></br>
     <p className="popupcard"><IdcardOutlined />&nbsp;&nbsp;{leel.author_username}</p>
    <a href={`/#/users/${leel.author_id}`}><GlobalOutlined />&nbsp;Homepage</a>
-      <p><TeamOutlined />&nbsp;Followings:{(user)? (user.followers) : null}</p>
+      <p><TeamOutlined />&nbsp;Followers:{(user)? (user.followers) : null}</p>
       
     </Card>
     </>
