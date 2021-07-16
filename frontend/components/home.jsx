@@ -12,7 +12,7 @@ export default ()=> {
 
     const handleDemoUser = () => {
         dispatch(login({
-            username: 'demo',
+            username: 'demouser',
             password: 'password',
             id: 9
         }));

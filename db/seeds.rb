@@ -12,8 +12,8 @@
 
 require 'open-uri'
 
-demo_user = User.create(username: "demo", email: "demo@email.com", password: "password")
+demo_user = User.create(username: "demouser", email: "demouser@email.com", password: "password")
 
-file = open('https://app-leel-pro.s3.us-west-1.amazonaws.com/astronaut.png')
+file = open('https://app-leel-pro.s3.us-west-1.amazonaws.com/blogger.png')
 
-demo_user.avatar.attach(io: file, filename: 'demoava.jpg')
+demo_user.avatar.attach(io: file, filename: 'demoavatar.jpg')
