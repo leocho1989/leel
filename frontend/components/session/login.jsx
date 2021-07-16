@@ -38,9 +38,9 @@ handleSubmit(e) {
 handleDemoUser (e) {
      e.preventDefault();
 this.props.login({
-    username: 'test',
-    password: 'testtest',
-    id:18
+    username: 'demo',
+    password: 'password',
+    id:9
 })
     .then(() => this.props.history.push('/leel_posts'));
 }

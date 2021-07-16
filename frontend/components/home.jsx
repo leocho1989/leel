@@ -12,10 +12,9 @@ export default ()=> {
 
     const handleDemoUser = () => {
         dispatch(login({
-            username: 'test',
-            password: 'testtest',
-            id: 18,
-            email: "test@google.com"
+            username: 'demo',
+            password: 'password',
+            id: 9
         }));
     };
 
