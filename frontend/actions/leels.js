@@ -5,6 +5,7 @@ export const LEEL_ERROR = "LEEL_ERROR";
 
 import * as LeelAPIUtil from "../util/leels";
 import {receiveError, clearError} from "./error";
+import {fetchUsers} from './users';
 
 
 export const receiveLeels = leels => ({
@@ -72,10 +73,10 @@ export const unLikeLeel= id=>dispatch=>(
 
 export const followLeeler= id=>dispatch=>(
     LeelAPIUtil.postFollowToLeeler(id)
-    .then(leel => dispatch(fetchLeels()))
+    .then(leel => {dispatch(fetchLeels()); dispatch(fetchUsers());})
 );
 
 export const unFollowLeeler= id=>dispatch=>(
      LeelAPIUtil.deleteFollowFromLeeler(id)
-    .then(leel => dispatch(fetchLeels()))
+     .then(leel => {dispatch(fetchLeels()); dispatch(fetchUsers());})
 );
