@@ -15,11 +15,10 @@ const currentUser = useSelector((state) => state.session.currentUser);
    const usersOb = useSelector((state) => state.users);
     
    const users = Object.keys(usersOb).map(key=>usersOb[key]);
-  
 
-   const user = users.filter(userOb=>userOb.username===leel.author_username);
- 
- 
+
+   const user = users.filter(userOb=>userOb.username===leel.author_username)[0];
+
 
    const { TextArea } = Input;
 
@@ -67,9 +66,22 @@ const currentUser = useSelector((state) => state.session.currentUser);
    setBody(e.target.value);
    
     };
+const userinfo =  
+ <>
+ <Card style={{ width: 180 }}>
+   
+   <div className="avatar_post_popup">
+     {(user && user.avatar) ? (<img id="small_pic" src={user.avatar} />):(<img id="small_pic" src={window.avatarURL} />)}
+    </div>
+    <br></br>
+    <p className="popupcard"><IdcardOutlined />&nbsp;&nbsp;{leel.author_username}</p>
+   <a href={`/#/users/${leel.author_id}`}><GlobalOutlined />&nbsp;Homepage</a>
+      <p><TeamOutlined />&nbsp;Followings:{(user)? (user.followers) : null}</p>
+      
+    </Card>
+    </>
 
-
-const avatar_pic = (user.avatar) ? (<img id="avatar" src={user.avatar} />):(<Avatar size={64} icon={<UserOutlined />} />)
+const avatar_pic = (user && user.avatar) ? (<img id="avatar" src={user.avatar} />):(<Avatar size={64} icon={<UserOutlined />} />)
 
       let likeButtonText = <HeartOutlined/>;
     let likeButtonAction = ()=>dispatch(likeLeel(leel.id));
@@ -80,7 +92,7 @@ const avatar_pic = (user.avatar) ? (<img id="avatar" src={user.avatar} />):(<Ava
     
          let followButtonText = <UserAddOutlined />;
     let followButtonAction = ()=>dispatch(followLeeler(leel.author_id));
-    if (user.followed_by_current_user) {
+    if (user && user.followed_by_current_user) {
         followButtonText  = <UserDeleteOutlined />;
         followButtonAction = () =>dispatch(unFollowLeeler(leel.author_id));
     }
@@ -118,22 +130,6 @@ const edit_button = (currentUser.username===leel.author_username) ?
 
 const postPhoto = (leel.photoUrls) ? (leel.photoUrls.map((photoUrl, index) => (<p key={index}><img id="post_photo" src={photoUrl} /></p>))) : null;
 
-
-
- const userinfo =  
- <>
- <Card style={{ width: 180 }}>
-   
-   <div className="avatar_post_popup">
-        <img id="small_pic" src={window.avatarURL} />
-    </div>
-    <br></br>
-    <p className="popupcard"><IdcardOutlined />&nbsp;&nbsp;{leel.author_username}</p>
-   <a href={`/#/users/${leel.author_id}`}><GlobalOutlined />&nbsp;Homepage</a>
-      <p><TeamOutlined />&nbsp;Followings:</p>
-      
-    </Card>
-    </>
 
  
 
