@@ -39,8 +39,8 @@ class User < ApplicationRecord
     has_many :followers,
     through: :following_users,
     source: :follower
-    
-    
+
+    has_one_attached :avatar
     
     
 

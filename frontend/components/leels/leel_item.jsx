@@ -10,15 +10,15 @@ import PhotoEdit from './PhotoEdit';
 export default ( {leel} ) =>{
 
   const dispatch = useDispatch();
-
+const currentUser = useSelector((state) => state.session.currentUser);
   
    const usersOb = useSelector((state) => state.users);
-    const currentUser = useSelector((state) => state.session.currentUser);
+    
    const users = Object.keys(usersOb).map(key=>usersOb[key]);
   
 
    const user = users.filter(userOb=>userOb.username===leel.author_username);
-
+ 
  
 
    const { TextArea } = Input;
@@ -67,6 +67,9 @@ export default ( {leel} ) =>{
    setBody(e.target.value);
    
     };
+
+
+const avatar_pic = (user.avatar) ? (<img id="avatar" src={user.avatar} />):(<Avatar size={64} icon={<UserOutlined />} />)
 
       let likeButtonText = <HeartOutlined/>;
     let likeButtonAction = ()=>dispatch(likeLeel(leel.id));
@@ -132,7 +135,7 @@ const postPhoto = (leel.photoUrls) ? (leel.photoUrls.map((photoUrl, index) => (<
     </Card>
     </>
 
-
+ 
 
 
     return (
@@ -142,7 +145,7 @@ const postPhoto = (leel.photoUrls) ? (leel.photoUrls.map((photoUrl, index) => (<
         <div className="avatar_post">
           <Dropdown overlay={userinfo}>
     <a className="ant-dropdown-link" onClick={e => e.preventDefault()}>
-      <Avatar size={64} icon={<UserOutlined />} />
+      {avatar_pic}
     </a>
   </Dropdown>
        </div>
