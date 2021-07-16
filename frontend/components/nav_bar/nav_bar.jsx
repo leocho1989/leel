@@ -1,7 +1,7 @@
 import React from 'react';
 import {Link, useLocation} from 'react-router-dom';
 import { Input, Space, Menu, Dropdown } from 'antd';
-import { DownOutlined,  UserOutlined, HeartOutlined,UnorderedListOutlined, UserAddOutlined, HomeFilled} from '@ant-design/icons';
+import { DownOutlined,  UserOutlined, HeartOutlined,UnorderedListOutlined, UserAddOutlined, HomeFilled, RocketFilled} from '@ant-design/icons';
 
 
 
@@ -31,7 +31,7 @@ export default ({ currentUser, logout, ...props}) =>{
         <UserAddOutlined /> Following (disabled)
       </a>
     </Menu.Item > */}
-    <Menu.Item key="4" danger onClick={logout}>Log Out</Menu.Item>
+    <Menu.Item key="4" danger onClick={logout}>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<RocketFilled />&nbsp;&nbsp;Log Out</Menu.Item>
   </Menu>
   </>
 ) : null;
