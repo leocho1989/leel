@@ -40,7 +40,7 @@ handleDemoUser (e) {
 this.props.login({
     username: 'demouser',
     password: 'password',
-    id:9
+    id:10
 })
     .then(() => this.props.history.push('/leel_posts'));
 }
