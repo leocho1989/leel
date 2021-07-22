@@ -28,7 +28,7 @@ const nNum = parseInt(user_num);
   
 
     const userLeel = (currentUser) ? (leels.filter(leel => leel.author_id===nNum)) : (<Redirect to="/login" />);
-    console.log(userLeel);
+    // console.log(userLeel);
 
  
 const display = (userLeel.length > 0 ) ? (<><div className="leel_row">
