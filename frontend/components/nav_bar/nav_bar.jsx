@@ -13,7 +13,7 @@ export default ({ currentUser, logout, ...props}) =>{
     let location = useLocation();
 
   const leelsOb = useSelector((state) => state.leels);
-  console.log(leelsOb)
+  
 
   const leels = Object.keys(leelsOb).map(key=>leelsOb[key]);
 
@@ -23,7 +23,7 @@ export default ({ currentUser, logout, ...props}) =>{
     (<>
   <Menu>
     <Menu.Item key="1">
-      <a href={`/#/users/${leel.author_id}`}>
+      <a href={`/#/users/${(leel===undefined) ? (null) :(leel.author_id)}`}>
         <UnorderedListOutlined /> My leels
       </a>
     </Menu.Item >
