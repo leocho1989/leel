@@ -13,6 +13,7 @@ export default ({ currentUser, logout, ...props}) =>{
     let location = useLocation();
 
   const leelsOb = useSelector((state) => state.leels);
+  console.log(leelsOb)
 
   const leels = Object.keys(leelsOb).map(key=>leelsOb[key]);
 
