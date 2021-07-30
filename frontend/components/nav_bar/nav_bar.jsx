@@ -2,7 +2,7 @@ import React from 'react';
 import {Link, useLocation} from 'react-router-dom';
 import { Input, Space, Menu, Dropdown } from 'antd';
 import { DownOutlined,  UserOutlined, HeartOutlined,UnorderedListOutlined, UserAddOutlined, HomeFilled, RocketFilled} from '@ant-design/icons';
-import { useDispatch, useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 
 
 
@@ -17,7 +17,8 @@ export default ({ currentUser, logout, ...props}) =>{
 
   const leels = Object.keys(leelsOb).map(key=>leelsOb[key]);
 
-  const leel= leels.filter(leel => leel.author_username===currentUser.username)[0];
+
+  const leel= (currentUser) ? (leels.filter(leel => leel.author_username===currentUser.username)[0]) : (null);
 
    const menu = currentUser ? 
     (<>
@@ -63,7 +64,7 @@ export default ({ currentUser, logout, ...props}) =>{
 
     const { Search } = Input;
     const onSearch = value => console.log(value);
- 
+
 
     return (
       <>
