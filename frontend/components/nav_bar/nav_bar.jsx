@@ -2,6 +2,7 @@ import React from 'react';
 import {Link, useLocation} from 'react-router-dom';
 import { Input, Space, Menu, Dropdown } from 'antd';
 import { DownOutlined,  UserOutlined, HeartOutlined,UnorderedListOutlined, UserAddOutlined, HomeFilled, RocketFilled} from '@ant-design/icons';
+import { useDispatch, useSelector } from 'react-redux';
 
 
 
@@ -10,13 +11,18 @@ import { DownOutlined,  UserOutlined, HeartOutlined,UnorderedListOutlined, UserA
 export default ({ currentUser, logout, ...props}) =>{
 
     let location = useLocation();
-  
+
+  const leelsOb = useSelector((state) => state.leels);
+
+  const leels = Object.keys(leelsOb).map(key=>leelsOb[key]);
+
+  const leel= leels.filter(leel => leel.author_username===currentUser.username)[0];
 
    const menu = currentUser ? 
     (<>
   <Menu>
     <Menu.Item key="1">
-      <a href={`/#/users/${currentUser.id}`}>
+      <a href={`/#/users/${leel.author_id}`}>
         <UnorderedListOutlined /> My leels
       </a>
     </Menu.Item >
