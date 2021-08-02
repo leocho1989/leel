@@ -2,6 +2,7 @@
 <html>
   <head>
     <title>leel</title>
+
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -27,7 +28,11 @@
     window.videoURL = "<%= image_url('video.png') %>";
     window.avatarURL = "<%= image_url('avatar.png') %>";
     window.uploadURL = "<%= image_url('upload.png') %>";
+    window.faviconURL = "<%= image_url('favicon.ico') %>";
     </script>
+
+
+<link rel="icon" type="image/x-icon" sizes="16x16" href="favicon.ico">
   </head>
 
   <body>
