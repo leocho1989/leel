@@ -1,8 +1,8 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {Link, useLocation} from 'react-router-dom';
-import { Input, Space, Menu, Dropdown } from 'antd';
-import { DownOutlined,  UserOutlined, HeartOutlined,UnorderedListOutlined, UserAddOutlined, HomeFilled, RocketFilled} from '@ant-design/icons';
-import { useSelector } from 'react-redux';
+import { Menu, Dropdown, Card } from 'antd';
+import { DownOutlined,  UserOutlined, HeartOutlined,UnorderedListOutlined, HomeFilled, RocketFilled} from '@ant-design/icons';
+import { useDispatch, useSelector } from 'react-redux';
 
 
 
@@ -20,6 +20,14 @@ export default ({ currentUser, logout, ...props}) =>{
 
   const leel= (currentUser) ? (leels.filter(leel => leel.author_username===currentUser.username)[0]) : (null);
 
+  const dispatch = useDispatch();
+
+  const usersOb = useSelector((state) => state.users);
+    
+   const users = Object.keys(usersOb).map(key=>usersOb[key]);
+
+  //  console.log(users);
+
    const menu = currentUser ? 
     (<>
   <Menu>
@@ -33,12 +41,7 @@ export default ({ currentUser, logout, ...props}) =>{
         <HeartOutlined /> Likes
       </a>
     </Menu.Item >
-{/*     
-    <Menu.Item key="3" disabled>
-      <a href="/">
-        <UserAddOutlined /> Following (disabled)
-      </a>
-    </Menu.Item > */}
+
     <Menu.Item key="4" danger onClick={logout}><RocketFilled /> Log Out</Menu.Item>
   </Menu>
   </>
@@ -62,19 +65,39 @@ export default ({ currentUser, logout, ...props}) =>{
         </div>
     );
 
-    const { Search } = Input;
-    const onSearch = value => console.log(value);
+
+  const [searchInfo, setSearchInfo] = useState("");
+
+const handleChange = (e) => {
+  e.preventDefault();
+  setSearchInfo(e.target.value);
+}
+
+const user = (searchInfo !=="" && users.length >0) ? (users.filter(user=> user.username.toLowerCase().includes(searchInfo.toLowerCase()))):(null)
+
+
+const searchResult = <>
+ <Card style={{ width: 500 }}>
+   {(user && user.length>0) ? (user.map((userOb,index)=> (<><a href={`/#/users/${userOb.id}`} key={userOb.id}><p key={index}>{userOb.username}</p></a></>))):(<p>No leelers found</p>)}
+    </Card>
+    </>
+
 
 
     return (
       <>
         <header className="nav-bar">
-          <div className="navbar">
-          <Link className="logo" to="/">leel</Link>
-          <Space direction="vertical">
-            <Search className="search_bar" placeholder="Search leel" onSearch={onSearch} style={{ width: 300 }} />
-            </Space>
-          </div>
+         <div>
+          <Link className="logo "to="/">leel</Link>
+
+
+          <Dropdown  overlay={searchResult}>
+    
+            <input className="search_bar" placeholder="Search leelers" onChange={handleChange} style={{ width: 300 }} />
+            
+  </Dropdown> 
+
+         </div>
             <div>
                 {display}  
             </div>

@@ -102,8 +102,20 @@
         }
 
        .search_bar {
-           margin-top: -15px;
-           margin-left: 10px;
+    
+           margin-left: 20px;
+           margin-top: 28px;
+     
+           
+    border: none;
+    border-radius: 3px;
+    background-color: rgb(244, 244, 244);
+    color: black;  
+       }
+
+       .search_user {
+           display: inline-block;
+           font-family: 'Lora', serif;
        }
 
 

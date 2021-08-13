@@ -97,7 +97,7 @@ body {
   justify-content: space-between;
   padding: 0px 5px 0px 10px;
   align-items: center;
-  height: 45px;
+  height: 55px;
   width: 100%;
   top: 0px;
   position: fixed;
@@ -105,9 +105,10 @@ body {
   overflow: hidden;
   border-bottom: 1px solid rgba(182, 181, 181, 0.5);
  
-   
 
 }
+
+
 
 .username {
   color:#000000;
@@ -170,11 +171,15 @@ body {
 
 .logo {
   color: #ffffff;
-  margin: 0px 10px 0px 0px;
+
 
   text-decoration: none;
 
   font-size: 50px;
 
 font-family: 'Lobster', cursive;
+// margin-top: 10px;
+float: left;
 }
+
+
