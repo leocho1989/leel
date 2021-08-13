@@ -52,7 +52,7 @@ const currentUser = useSelector((state) => state.session.currentUser);
         e.preventDefault();
         dispatch(deleteLeel(leel));
     };
-
+```
      
 
 ```Ruby
@@ -95,3 +95,4 @@ class ApplicationController < ActionController::Base
   
 
 end
+```
