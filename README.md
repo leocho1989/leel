@@ -26,4 +26,31 @@ Highlights:
 
 Code Snippets:
 
-<img src="https://app-leel-pro.s3.us-west-1.amazonaws.com/Screen+Shot+2021-08-13+at+1.46.19+PM.png" />
+```JavaScript
+
+export default ( {leel} ) =>{
+
+  const dispatch = useDispatch();
+const currentUser = useSelector((state) => state.session.currentUser);
+  
+   const usersOb = useSelector((state) => state.users);
+    
+   const users = Object.keys(usersOb).map(key=>usersOb[key]);
+
+
+   const user = users.filter(userOb=>userOb.username===leel.author_username)[0];
+
+
+   const { TextArea } = Input;
+
+  const [isModalVisible, setIsModalVisible] = useState(false);
+  const [body=leel.body,setBody] = useState();
+  const [title=leel.title, setTitle] = useState();
+
+
+    const handleDelete =(e)=>{
+        e.preventDefault();
+        dispatch(deleteLeel(leel));
+    };
+
+     
