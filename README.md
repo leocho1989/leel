@@ -26,6 +26,8 @@ Highlights:
 
 Code Snippets:
 
+* JavaScript
+
 ```JavaScript
 
 export default ( {leel} ) =>{
@@ -54,6 +56,7 @@ const currentUser = useSelector((state) => state.session.currentUser);
     };
 ```
      
+* Ruby
 
 ```Ruby
 
