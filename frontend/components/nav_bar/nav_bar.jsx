@@ -1,9 +1,8 @@
 import React, { useState } from 'react';
 import {Link, useLocation} from 'react-router-dom';
-import { Menu, Dropdown, Card, Modal } from 'antd';
+import { Menu, Dropdown, Card } from 'antd';
 import { DownOutlined,  UserOutlined, HeartOutlined,UnorderedListOutlined, HomeFilled, RocketFilled} from '@ant-design/icons';
 import { useDispatch, useSelector } from 'react-redux';
-import e from 'express';
 
 
 
@@ -27,6 +26,7 @@ export default ({ currentUser, logout, ...props}) =>{
     
    const users = Object.keys(usersOb).map(key=>usersOb[key]);
 
+  //  console.log(users);
 
    const menu = currentUser ? 
     (<>
@@ -83,13 +83,6 @@ const searchResult = <>
     </>
 
 
- const handleClick = () => {
-
-  e.preventDefault();
-  setSearchInfo("");
- }
-
-
 
     return (
       <>
@@ -98,9 +91,9 @@ const searchResult = <>
           <Link className="logo "to="/">leel</Link>
 
 
-          <Dropdown overlay={searchResult}>
+          <Dropdown  overlay={searchResult}>
     
-            <input className="search_bar" placeholder="Search leelers" onChange={handleChange} style={{ width: 300 }} onClick={handleClick} />
+            <input className="search_bar" placeholder="Search leelers" onChange={handleChange} style={{ width: 300 }} />
             
   </Dropdown> 
 
