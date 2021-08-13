@@ -26,7 +26,6 @@ export default ({ currentUser, logout, ...props}) =>{
     
    const users = Object.keys(usersOb).map(key=>usersOb[key]);
 
-  //  console.log(users);
 
    const menu = currentUser ? 
     (<>
