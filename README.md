@@ -26,4 +26,4 @@ Highlights:
 
 Code Snippets:
 
-<script src="https://gist.github.com/leocho1989/d4a7f962251e049404466d2d3d1c90b9.js"></script>
+<img src="https://app-leel-pro.s3.us-west-1.amazonaws.com/Screen+Shot+2021-08-13+at+1.46.19+PM.png" />
