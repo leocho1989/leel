@@ -77,7 +77,7 @@ const user = (searchInfo !=="" && users.length >0) ? (users.filter(user=> user.u
 
 
 const searchResult = <>
- <Card style={{ width: 500 }}>
+ <Card style={{ width: 250 }}>
    {(user && user.length>0) ? (user.map((userOb,index)=> (<><a href={`/#/users/${userOb.id}`} key={userOb.id}><p key={index}>{userOb.username}</p></a></>))):(<p>No leelers found</p>)}
     </Card>
     </>
