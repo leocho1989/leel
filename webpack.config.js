@@ -1,4 +1,5 @@
 const path = require("path");
+const nodeExternals = require('webpack-node-externals');
 
 module.exports = {
   context: __dirname,
@@ -9,6 +10,16 @@ module.exports = {
   },
   resolve: {
     extensions: [".js", ".jsx", "*"], 
+    fallback: { "path": false,
+  "stream": false,
+  "buffer": false,
+  "http": false,
+"crypto": false,
+"zlib": false,
+"net": false,
+"fs": false,
+
+ },
   },
   module: {
     rules: [
@@ -26,4 +37,10 @@ module.exports = {
     ],
   },
   devtool: "eval-source-map",
+ 
+  target: 'node',
+  externals: [nodeExternals()],
+
 };
+
+

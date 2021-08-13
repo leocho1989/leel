@@ -44,7 +44,9 @@
     "redux": "^4.1.0",
     "redux-logger": "^3.0.6",
     "style-loader": "^3.0.0",
-    "webpack": "^5.50.0"
+    "util": "^0.12.4",
+    "webpack": "^5.50.0",
+    "webpack-node-externals": "^3.0.0"
   },
   "devDependencies": {
     "babel-core": "^6.26.3",
