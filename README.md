@@ -23,3 +23,7 @@ Highlights:
 <img src="https://app-leel-pro.s3.us-west-1.amazonaws.com/Screen+Shot+2021-07-16+at+6.26.58+AM.png"/>
 
 <img src="https://app-leel-pro.s3.us-west-1.amazonaws.com/Screen+Shot+2021-07-16+at+6.27.51+AM.png"/>
+
+Code Snippets:
+
+<script src="https://gist.github.com/leocho1989/d4a7f962251e049404466d2d3d1c90b9.js"></script>
