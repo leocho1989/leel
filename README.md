@@ -23,3 +23,79 @@ Highlights:
 <img src="https://app-leel-pro.s3.us-west-1.amazonaws.com/Screen+Shot+2021-07-16+at+6.26.58+AM.png"/>
 
 <img src="https://app-leel-pro.s3.us-west-1.amazonaws.com/Screen+Shot+2021-07-16+at+6.27.51+AM.png"/>
+
+Code Snippets:
+
+* JavaScript
+
+```JavaScript
+
+export default ( {leel} ) =>{
+
+  const dispatch = useDispatch();
+const currentUser = useSelector((state) => state.session.currentUser);
+  
+   const usersOb = useSelector((state) => state.users);
+    
+   const users = Object.keys(usersOb).map(key=>usersOb[key]);
+
+
+   const user = users.filter(userOb=>userOb.username===leel.author_username)[0];
+
+
+   const { TextArea } = Input;
+
+  const [isModalVisible, setIsModalVisible] = useState(false);
+  const [body=leel.body,setBody] = useState();
+  const [title=leel.title, setTitle] = useState();
+
+
+    const handleDelete =(e)=>{
+        e.preventDefault();
+        dispatch(deleteLeel(leel));
+    };
+```
+     
+* Ruby
+
+```Ruby
+
+class ApplicationController < ActionController::Base
+    protect_from_forgery with: :exception
+
+    helper_method :current_user, :logged_in?
+
+
+    def current_user
+        return nil unless session[:session_token]
+        @current_user ||= User.find_by(session_token:session[:session_token])
+    end
+    
+    def login!(user)
+        user.reset_session_token!
+        session[:session_token] = user.session_token
+        @current_user = user
+    end
+
+    def logout!
+        current_user.reset_session_token!
+        session[:session_token] = nil
+        @current_user = nil
+    end
+
+        
+    def logged_in?
+        !!current_user
+    end
+        
+    def require_logged_out
+        redirect_to user_url(current_user) if logged_in?
+    end
+        
+    def require_logged_in
+        redirect_to new_session_url unless logged_in?
+    end
+  
+
+end
+```
