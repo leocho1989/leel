@@ -60,7 +60,8 @@ const currentUser = useSelector((state) => state.session.currentUser);
      
 * Ruby
 
-  I used Ruby for backend authentication feature. It was easy and clear to use Ruby for authentication coding part.
+  I used Ruby for backend authentication feature. 
+  It was easy and clear to use Ruby for authentication coding part.
 
 ```Ruby
 
