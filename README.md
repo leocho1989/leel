@@ -27,7 +27,7 @@ Highlights:
 Code Snippets:
 
 * JavaScript
-I used JS hook to make my code clean and easy to write.
+  I used JS hook to make my code clean and easy to write.
 
 ```JavaScript
 
@@ -58,7 +58,7 @@ const currentUser = useSelector((state) => state.session.currentUser);
 ```
      
 * Ruby
-I used ruby for backend authentication feature.
+  I used ruby for backend authentication feature.
 
 ```Ruby
 
